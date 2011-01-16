@@ -1,11 +1,13 @@
 
 # Ric (Lib)
+<img src="https://github.com/palladius/riclib/raw/master/images/photos/Riccardo/Riccardo%20OnBedWithPenguin.jpg" width="300" alt="Sleeping with my Penguin" align='right' />
+
 This is [my](http://www.palladius.it/) first public repository with icons code and stuff.
 
 Modern life is RUBYish, so am I ;-)
 
- [ric](http://rubygems.org/gems/ric)
- [Riclib](http://github.com/palladius/riclib)
+* [ric](http://rubygems.org/gems/ric)
+* [Riclib](http://github.com/palladius/riclib)
 
 ## Installation
 

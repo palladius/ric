@@ -1,6 +1,6 @@
-HISTORY
 Manifest
 README
+README.md
 Rakefile
 TODO
 bin/ric
@@ -10,4 +10,5 @@ lib/ric.rb
 lib/ric/colors.rb
 lib/ric/html.rb
 lib/uniquify.rb
+ric.gemspec
 var/www/index.html

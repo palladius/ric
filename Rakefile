@@ -14,7 +14,8 @@ Echoe.new('ric', '0.9.5') do |p|
     "docs/*", 
     "script/*", 
     "images/*/*/*", "images/*/*", 'images', 
-    "private/*"
+    "private/*",
+    "HISTORY"
   ]
   p.development_dependencies = [ ]
 end
