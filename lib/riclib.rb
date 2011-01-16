@@ -1,7 +1,7 @@
 
 # RICLIB!
 
-module RicLib
+module Riclib
   def self.say_hello
     puts 'hello world'
   end
