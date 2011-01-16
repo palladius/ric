@@ -5,26 +5,9 @@ Rakefile
 TODO
 bin/ric
 docs/journal.txt
-images/desktop/linux-lightbulb.png
-images/icons/database/db-commit.png
-images/icons/development/application.png
-images/icons/development/grave.png
-images/icons/development/iFuck.png
-images/icons/development/ontology.png
-images/icons/development/pointers.png
-images/icons/development/svn.png
-images/icons/development/tools.png
-images/icons/disks/Ric 120GB.ico
-images/icons/linux/ldap.png
-images/icons/privacy.png
-images/icons/social/facebook_64.png
-images/icons/social/linkedin_64.png
-images/icons/social/rss_64.png
-images/icons/social/twitter_64.png
-images/icons/tux/scientific.png
 init.rb
 lib/helpers/rails_helper.rb
-lib/railsume.rb
+lib/rails_stuff.rb
 lib/ric.rb
 lib/ric/colors.rb
 lib/ric/html.rb
