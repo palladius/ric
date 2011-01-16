@@ -2,23 +2,32 @@
 # RICLIB!
 
 module Riclib
+  require File.expand_path('./ric_colors.rb', File.dirname( __FILE__) )
+  #include RicColors
   
   def self.say_hello
-    puts 'hello world'
+    puts 'Riclib: hello world'
   end
 
   def amaranto(str)
-  	 "Riclib::Amaranto: '#{str}'"
+    "Riclib::Amaranto: '#{str}'"
   end
   
   def self.help
-    puts "This is RicLib Riccardo library (my firdst gem!)"
+    puts "Riclib: This is Riccardo library (my first gem!)"
   end
   
   def version
-    "SHould be 0.0.5 (but this is NOT dry! ;) )"
+    "Should be 0.1.1 -- but this is NOT dry! ;)"
   end
   
+  def green(s)
+    "TODO_VERDE(#{s})"
+  end
+  
+  def load_libs  
+    green(:ok)
+  end
 end
 
 
