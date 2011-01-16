@@ -9,16 +9,13 @@ module Riclib
     puts 'Riclib: hello world'
   end
 
-  def amaranto(str)
-    "Riclib::Amaranto: '#{str}'"
-  end
   
   def self.help
     puts "Riclib: This is Riccardo library (my first gem!)"
   end
   
   def version
-    "Should be 0.1.1 -- but this is NOT dry! ;)"
+    "Should be 0.9.0 -- but this is NOT dry! ;)"
   end
   
   def green(s)
