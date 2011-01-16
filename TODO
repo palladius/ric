@@ -1,0 +1,2 @@
+
+- include ~/lib/ric.rb automagically if exists ;)

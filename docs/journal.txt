@@ -2,4 +2,4 @@
 = GEMS HOWTO =
 
  - Change ./Rakefile
- - 
+ - rake -T # for a list

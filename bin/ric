@@ -1,2 +1,5 @@
+#!/usr/bin/env ruby
 
-echo "Welcome to RIC, the swiss-army knife tool from Riccardo"
+# ruby? #!/bin/sh
+
+puts "Welcome to ric, the swiss-army knife tool from Riccardo, included in riclib gem (v#{version})"

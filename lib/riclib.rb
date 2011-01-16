@@ -16,7 +16,7 @@ module Riclib
   end
   
   def version
-    "SHould be 0.0.3 (but this is NOT dry! ;) )"
+    "SHould be 0.0.5 (but this is NOT dry! ;) )"
   end
   
 end
