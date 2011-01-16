@@ -1,8 +1,11 @@
 #require 'lib/ric/color'
-require 'uniquify'
 require 'ric'
-include Ric
-
+require 'ric/colors'
+require 'ric/html'
+require 'uniquify'
+#include Ric
+#include Ric::Html
+#include Ric::Colors
 
 #require 'rails_stuff'
 #require 'doesnt_exist'

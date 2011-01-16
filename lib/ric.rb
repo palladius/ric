@@ -1,14 +1,10 @@
 
 # RICLIB!
 module Ric
-  #require File.expand_path('ric/colors.rb', File.dirname( __FILE__) )
-  
-  include Ric::Colors
   
   def self.say_hello
-    puts 'Riclib: hello world'
+    puts "Ric: Hello world by #{yellow 'Riccardo Carlesso' rescue 'Riccardo Carlesso Error'}"
   end
-
   
   def self.ric_help
     ret <<-HTML
@@ -29,13 +25,9 @@ module Ric
   def self.version
     '(Wet) 0.9.1' # its NOT dry (yet)! Someone help with Gem version!
   end
-  
-  def load_libs  
-    green(:ok)
-  end
-  
+    
   # you can require more than one gem and a symbol as well :)
-  def richiedi(gems)
+  def self.richiedi(gems)
     puts "Riccardo personal super-'require'.. "
     case gems.class.to_s
     when 'String'
@@ -46,4 +38,5 @@ module Ric
       return require gems.to_s
     end
   end
+  
 end
