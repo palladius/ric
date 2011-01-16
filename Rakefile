@@ -10,6 +10,8 @@ Echoe.new('riclib', '0.0.5') do |p|
   p.url            = "http://github.com/palladius/riclib"
   p.author         = "Riccardo Carlesso"
   p.email          = "['p','ll','diusbonton].join('a') @ gmail.com"
-  p.ignore_pattern = ["tmp/*", "script/*", "images/*", "*.jpg" , "private/*"]
+  p.ignore_pattern = ["tmp/*", "script/*", 
+    "images/*/*/*jpg", "images/*/*jpg", "*.jpg" , 'images', 
+    "private/*"]
   p.development_dependencies = []
 end

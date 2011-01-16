@@ -1,5 +1,8 @@
 
 = GEMS HOWTO =
 
- - Change ./Rakefile
+develop:
+ - edit Rakefile
  - rake -T # for a list
+deploy: 
+ - gem push pkg/riclib-0.0.5.gem

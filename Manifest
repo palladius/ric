@@ -4,9 +4,7 @@ Rakefile
 TODO
 bin/ric
 docs/journal.txt
-images/desktop/LodossWar.jpg
 images/desktop/linux-lightbulb.png
-images/icons/chicche/joystick boobs.jpg
 images/icons/database/db-commit.png
 images/icons/development/grave.png
 images/icons/development/iFuck.png
@@ -15,43 +13,15 @@ images/icons/development/pointers.png
 images/icons/development/svn.png
 images/icons/development/tools.png
 images/icons/disks/Ric 120GB.ico
-images/icons/linux/got root.jpg
 images/icons/linux/ldap.png
 images/icons/privacy.png
-images/icons/social/facebook painted.jpg
 images/icons/social/facebook_64.png
 images/icons/social/linkedin_64.png
 images/icons/social/rss_64.png
 images/icons/social/twitter_64.png
 images/icons/tux/tux scientific.png
-images/photos/Ireland/Dublin TCD tower.jpg
-images/photos/Ireland/Giants causeways.jpg
-images/photos/Ireland/I love Dublin.jpg
-images/photos/Piano Yellow Rose.jpg
-images/photos/Riccardo/Riccardo 1.jpg
-images/photos/Riccardo/Riccardo Bridge Dublin.jpg
-images/photos/Riccardo/Riccardo Cambridge.jpg
-images/photos/Riccardo/Riccardo Celtic Cross.jpg
-images/photos/Riccardo/Riccardo Developer in Dublin.jpg
-images/photos/Riccardo/Riccardo Fabio GuinnessDay.jpg
-images/photos/Riccardo/Riccardo GuinessDay.jpg
-images/photos/Riccardo/Riccardo Highlander.jpg
-images/photos/Riccardo/Riccardo Irish Breakfast.jpg
-images/photos/Riccardo/Riccardo OK pizza.jpg
-images/photos/Riccardo/Riccardo OnBedWithPenguin.jpg
-images/photos/Riccardo/Riccardo U2 CrokePark.jpg
-images/photos/Riccardo/Riccardo closeup by Karaoke.jpg
-images/photos/Riccardo/Riccardo elegant at LABS.jpg
-images/photos/Riccardo/Riccardo elegant smiling.jpg
-images/photos/Riccardo/Riccardo enjoying new iMac.jpg
-images/photos/Riccardo/Riccardo makes pizza.jpg
-images/photos/Riccardo/Riccardo purple1.jpg
-images/photos/Riccardo/Riccardo purple2.jpg
-images/photos/Riccardo/Riccardo sunglasses IFSC.jpg
-images/photos/Riccardo/Riccardo with Delgado.jpg
-images/photos/Riccardo/Riccardo yellow with Mac.jpg
-images/photos/ricarrabbiato.jpg
 lib/ric_colors.rb
 lib/ric_html.rb
 lib/riclib.rb
+riclib.gemspec
 var/www/index.html
