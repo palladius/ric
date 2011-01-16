@@ -1,0 +1,2 @@
+
+- aggiunta gem, seguiti consigli wqui:
