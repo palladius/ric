@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ric}
-  s.version = "0.9.5"
+  s.version = "0.9.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Riccardo Carlesso"]
@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
    with hence!)}
   s.email = %q{['p','ll','diusbonton].join('a') @ gmail.com}
   s.executables = ["ric"]
-  s.extra_rdoc_files = ["README", "README.md", "TODO", "bin/ric", "lib/helpers/rails_helper.rb", "lib/ric.rb", "lib/ric/colors.rb", "lib/ric/html.rb", "lib/uniquify.rb"]
-  s.files = ["HISTORY", "Manifest", "README", "README.md", "Rakefile", "TODO", "bin/ric", "init.rb", "lib/helpers/rails_helper.rb", "lib/ric.rb", "lib/ric/colors.rb", "lib/ric/html.rb", "lib/uniquify.rb", "ric.gemspec", "var/www/index.html"]
+  s.extra_rdoc_files = ["README.md", "TODO", "bin/ric", "lib/helpers/rails_helper.rb", "lib/ric.rb", "lib/ric/html.rb", "lib/ric_colors.rb", "lib/uniquify.rb"]
+  s.files = ["Manifest", "README.md", "Rakefile", "TODO", "bin/ric", "init.rb", "lib/helpers/rails_helper.rb", "lib/ric.rb", "lib/ric/html.rb", "lib/ric_colors.rb", "lib/uniquify.rb", "ric.gemspec", "var/www/index.html"]
   s.homepage = %q{http://github.com/palladius/riclib}
-  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Ric", "--main", "README"]
+  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Ric", "--main", "README.md"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{ric}
   s.rubygems_version = %q{1.4.2}

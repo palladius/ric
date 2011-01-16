@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
-# ruby? #!/bin/sh
+require 'rubygems'
+require 'ric'
 
-puts "Welcome to ric, the swiss-army knife tool from Riccardo, included in riclib gem (v#{version})"
+puts "Welcome to ric, the swiss-army knife tool from Riccardo, included in riclib gem (v#{Ric.version})"
+
+#include RicColors
+#Colors.pyellow 'ciao'
