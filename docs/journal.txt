@@ -1,10 +1,15 @@
 
 = GEMS HOWTO =
 
-develop:
+== develop ==
+
  - edit Rakefile
  - rake -T # for a list
- - rake manifest
- - rake build_gemspec
-deploy: 
- - gem push pkg/riclib-0.0.5.gem
+ - rake manifest ; rake build_gemspec
+
+== deploy ==
+
+ - gem push pkg/riclib-VER.gem
+ - # gem install riclib
+
+# Its pushed on gemcutter, yay!

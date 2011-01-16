@@ -294,7 +294,6 @@ end
     return !! terminal.to_s.match( /Apple_Terminal/ )
   end
 
-
 end # /module
 
 include RicColors

@@ -24,5 +24,4 @@ lib/helpers/rails_helper.rb
 lib/ric/html.rb
 lib/ric_colors.rb
 lib/riclib.rb
-riclib.gemspec
 var/www/index.html
