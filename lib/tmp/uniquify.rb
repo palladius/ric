@@ -37,9 +37,9 @@ end
 class ActiveRecord::Base
   include Uniquify
 
-  # returns an array of ids
+  ### returns an array of ids
   def self.ids
-    map{|active_record| active_record.id }
+    { :brought_to_you_by_ric_library =>  map{|active_record| active_record.id } }
   end
   
   def self.names

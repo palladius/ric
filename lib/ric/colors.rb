@@ -2,7 +2,8 @@
 
   # $Id: ric_colors.rb 5438 2010-12-16 15:06:29Z rcarlesso $
   
-module RicColors
+module Ric
+ module Colors
   
   $colors_active = true # DEFAULT: active
   $color_db = [
@@ -297,6 +298,5 @@ module RicColors
       return !! terminal.to_s.match( /Apple_Terminal/ )
     end
 
-end # /module
-
-#$colors_active = ! RicColor.daltonic_terminal? # DEFAULT: active
+ end # /module Colors
+end # /module Ric

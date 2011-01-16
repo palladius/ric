@@ -15,6 +15,7 @@ Echoe.new('ric', version ) do |p|
     "tmp/*", 
     "docs/*", 
     "script/*", 
+    "tmp/*", "tmp/*/*", "tmp/*/*/*",
     "images/*/*/*", "images/*/*", 'images', 
     "private/*",
     "HISTORY"

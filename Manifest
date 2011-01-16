@@ -1,4 +1,5 @@
 HISTORY.yml
+LICENSE
 Manifest
 README.md
 Rakefile
@@ -9,8 +10,13 @@ bin/ric
 bin/riclib-test
 init.rb
 lib/helpers/rails_helper.rb
-lib/ric.rb
+lib/ric/colors.rb
 lib/ric/html.rb
-lib/ric_colors.rb
-lib/uniquify.rb
+lib/ric/zibaldone.rb
+lib/riccardo_includes.rb
+lib/ruby_classes/strings.rb
+lib/tmp/uniquify.rb
+rails/init.rb
+ric.gemspec
+sbin/reboot.rb
 var/www/index.html

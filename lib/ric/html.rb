@@ -1,4 +1,5 @@
-module Ric::Html
+module Ric
+ module Html
   
   def test
     anything_to_html({:note => 'remove me', :foo => :bar } )
@@ -34,4 +35,5 @@ module Ric::Html
   end
   
   
-end #/RicHtml
+ end #/Html
+end #/Ric
