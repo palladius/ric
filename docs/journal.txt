@@ -11,7 +11,6 @@
 
 == deploy ==
 
- - gem push pkg/riclib-VER.gem
- - # gem install riclib
+  rake release
 
 # Its pushed on gemcutter, yay!

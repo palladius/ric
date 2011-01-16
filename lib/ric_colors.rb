@@ -2,7 +2,7 @@
 
   # $Id: ric_colors.rb 5438 2010-12-16 15:06:29Z rcarlesso $
   
-module RicColors
+module Ric::Colors
   
 $colors_active = true # DEFAULT: active
 $color_db = [
