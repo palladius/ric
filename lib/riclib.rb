@@ -1,7 +1,7 @@
 
 # RICLIB!
 
-module Riclib
+module Ric
   require File.expand_path('./ric_colors.rb', File.dirname( __FILE__) )
   #include RicColors
   
@@ -26,5 +26,4 @@ module Riclib
     green(:ok)
   end
 end
-
 
