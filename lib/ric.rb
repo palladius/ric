@@ -1,11 +1,15 @@
 
 # RICLIB!
 module Ric
+  $version
+  require File.expand_path('ric_colors.rb', File.dirname( __FILE__) )
+  #include RicColors
   
   def self.version
+    # TODO memoize/cache this into @@version
     #File.read( 'VERSION' ) rescue "0.0.42_bugged"
-    '(Wet) 0.9.6' # its NOT dry (yet)! Someone help with Gem version!
-    "Wet-0.9.6 (See file in '#{gempwd}')"
+    #{}"0.9.6WET (See file in '#{Ric.gemdir}')"
+    File.read( File.expand_path('VERSION' , Ric.gemdir ) )
   end
   
   def self.say_hello
@@ -13,7 +17,7 @@ module Ric
   end
   
   def self.ric_help
-    ret <<-HTML
+    ret = <<-HTML
     == Ric (formerly RicLib) == 
      This is Riccardo library (my first gem!). Try the following commands maybe
     Try some of the following: 
@@ -21,19 +25,25 @@ module Ric
       pred    'This is in red'
       pyellow 'This is yellow instead'
     
-      gem_basedir: #{ gem_basedir }
+      gemdir: #{ gemdir }
     HTML
     puts( ret )
     ret
   end
-  #alias :help  :ric_help
+  alias :help  :ric_help
   #alias :about :ric_help
   
-  def gem_basedir
-    File.dir(__FILE__)
+  def self.gemdir
+    File.dirname( File.dirname(__FILE__) + '../' )
   end
-  alias :gempwd :gem_basedir
 
+  def foo 
+    :bar
+  end
+  
+  def self.foo
+    'self.bar'
+  end
     
   # you can require more than one gem and a symbol as well :)
   def self.richiedi(gems)
@@ -48,6 +58,6 @@ module Ric
     end
   end
   
-
-  
 end
+
+include Ric

@@ -268,7 +268,7 @@ module RicColors
     }
 =end
 
-    class RicColor < String
+  class RicColor < String
       attr :color
   
       def initialize(mycol)
@@ -276,6 +276,7 @@ module RicColors
         @color = mycol
       end
   
+      # shouold become context sensitive...
       def to_s
         'RicColor: ' + self.send(@color)
       end
@@ -283,7 +284,9 @@ module RicColors
       def to_html
         "<font color=\"#{@color}\" >#{self}</font>"
       end
-    end #/Class RicColor
+  end #/Class RicColor
+
+
 
     def terminal
       ENV['TERM_PROGRAM'] || 'suppongo_ssh'

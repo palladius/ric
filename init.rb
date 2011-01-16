@@ -6,7 +6,6 @@ require 'uniquify'
 
 #include Ric
 #include Ric::Html
-#include Ric Colors
 
 #require 'rails_stuff'
 #require 'doesnt_exist'

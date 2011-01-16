@@ -12,6 +12,7 @@
 
 # When this works, just remove it!
 #require 'ric'
+$ver = '1.2.0'
 
 def richiedi(str)
   avail = `gem list #{str}`.split("\n").select{|line| line.match( /#{str} /) }.join('')
@@ -31,11 +32,9 @@ end
 
 def main()
   begin
-    nputs "RicLib Test (you should see something green): '#{ $0 }'"
+    nputs "RicLib Test v#{$ver} (you should see something green): '#{ $0 }'"
     nputs "#{richiedi(:rubygems)}"
-    nputs "#{richiedi(:riclib)}"
     nputs "#{richiedi(:ric)}"
-    require 'ric'
     Ric.say_hello
     nputs Ric.version
     nputs "Now invoking: #{white 'Ric.ric_help' }"

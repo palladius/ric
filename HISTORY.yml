@@ -1,7 +1,9 @@
 # would like to have this in YML format :)
 
+2011-01-16 v0.9.7:
+ - ric_help fixed
+ - VERSION made DRY! (same in module Ric.version and into gem! Its extremely unefficient but thats the price for dryness!)
 2011-01-16 v0.9.6: 
  - colors are broken, I implemnent a small test script in bin/
-
 2011-01-16 v0.9.2: 
  - Added uniquify from rbates just to copy it.
