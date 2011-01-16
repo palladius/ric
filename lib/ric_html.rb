@@ -1,5 +1,0 @@
-module RicHtml
-  
-  
-  
-end #/RicHtml

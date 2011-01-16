@@ -19,9 +19,9 @@ images/icons/social/facebook_64.png
 images/icons/social/linkedin_64.png
 images/icons/social/rss_64.png
 images/icons/social/twitter_64.png
-images/icons/tux/tux scientific.png
+images/icons/tux/scientific.png
+lib/ric/html.rb
 lib/ric_colors.rb
-lib/ric_html.rb
 lib/riclib.rb
 riclib.gemspec
 var/www/index.html
