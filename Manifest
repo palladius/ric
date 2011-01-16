@@ -1,3 +1,4 @@
+HISTORY
 Manifest
 README
 Rakefile
@@ -21,8 +22,10 @@ images/icons/social/linkedin_64.png
 images/icons/social/rss_64.png
 images/icons/social/twitter_64.png
 images/icons/tux/scientific.png
+init.rb
 lib/helpers/rails_helper.rb
+lib/railsume.rb
+lib/ric.rb
+lib/ric/colors.rb
 lib/ric/html.rb
-lib/ric_colors.rb
-lib/riclib.rb
 var/www/index.html

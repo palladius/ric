@@ -1,9 +1,9 @@
 
 # RICLIB!
 
-module Ric
-  require File.expand_path('./ric_colors.rb', File.dirname( __FILE__) )
-  #include RicColors
+module Riclib
+
+  #include Ric::Colors
   
   def self.say_hello
     puts 'Riclib: hello world'
@@ -11,7 +11,18 @@ module Ric
 
   
   def self.help
-    puts "Riclib: This is Riccardo library (my first gem!)"
+    ret <<-HTML
+    == Ric (formerly RicLib) == 
+     This is Riccardo library (my first gem!). Try the following commands maybe
+    
+    
+    HTML
+    puts( ret )
+    ret
+  end
+  
+  def green
+    :TODO
   end
   
   def version
