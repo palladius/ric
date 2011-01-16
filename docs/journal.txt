@@ -1,6 +1,8 @@
 
 = GEMS HOWTO =
 
+  Copied from: http://buzaz.com/index.php/2010/01/03/how-to-build-a-ruby-gem/
+
 == develop ==
 
  - edit Rakefile

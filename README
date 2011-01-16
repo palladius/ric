@@ -1,4 +1,5 @@
 
+= Synopsis = 
 This is my public repository with icons code and stuff.
 
 Modern life is RUBYish, so am I ;-)
@@ -6,3 +7,12 @@ Modern life is RUBYish, so am I ;-)
 ‘At the moment, this is a public place where I store shared resources such as icons and stuff.. Lets try to keep it well organized, for DHH sake!
 
 
+== Usage ==
+
+ gem install riclib
+ 
+Some code to take advantage of my script (are you sure?!?)
+
+ require 'riclib'
+ puts(red('This is a red sentence'))
+ 
