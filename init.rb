@@ -3,6 +3,7 @@ require 'ric'
 require 'ric_colors'
 require 'ric/html'
 require 'uniquify'
+
 #include Ric
 #include Ric::Html
 #include Ric Colors

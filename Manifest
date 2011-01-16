@@ -1,7 +1,10 @@
+HISTORY.yml
 Manifest
 README.md
 Rakefile
 TODO
+VERSION
+bin/itunes
 bin/ric
 bin/riclib-test
 init.rb
@@ -10,5 +13,4 @@ lib/ric.rb
 lib/ric/html.rb
 lib/ric_colors.rb
 lib/uniquify.rb
-ric.gemspec
 var/www/index.html

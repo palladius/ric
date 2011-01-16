@@ -2,6 +2,12 @@
 # RICLIB!
 module Ric
   
+  def self.version
+    #File.read( 'VERSION' ) rescue "0.0.42_bugged"
+    '(Wet) 0.9.6' # its NOT dry (yet)! Someone help with Gem version!
+    "Wet-0.9.6 (See file in '#{gempwd}')"
+  end
+  
   def self.say_hello
     puts "Ric: Hello world by #{yellow 'Riccardo Carlesso' rescue 'Riccardo Carlesso Error'}"
   end
@@ -15,6 +21,7 @@ module Ric
       pred    'This is in red'
       pyellow 'This is yellow instead'
     
+      gem_basedir: #{ gem_basedir }
     HTML
     puts( ret )
     ret
@@ -22,9 +29,11 @@ module Ric
   #alias :help  :ric_help
   #alias :about :ric_help
   
-  def self.version
-    '(Wet) 0.9.1' # its NOT dry (yet)! Someone help with Gem version!
+  def gem_basedir
+    File.dir(__FILE__)
   end
+  alias :gempwd :gem_basedir
+
     
   # you can require more than one gem and a symbol as well :)
   def self.richiedi(gems)
@@ -38,5 +47,7 @@ module Ric
       return require gems.to_s
     end
   end
+  
+
   
 end
