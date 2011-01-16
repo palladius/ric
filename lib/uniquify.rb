@@ -1,6 +1,8 @@
 # copied from RBates
 # http://railscasts.com/episodes/135-making-a-gem
+
 module Uniquify
+  
   def self.included(base)
     base.extend ClassMethods
   end
@@ -34,5 +36,15 @@ end
 
 class ActiveRecord::Base
   include Uniquify
+
+  # returns an array of ids
+  def self.ids
+    map{|active_record| active_record.id }
+  end
+  
+  def self.names
+    map{|active_record| active_record.name.to_s rescue active_record.to_s }
+  end
+  
 end
 

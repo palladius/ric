@@ -296,6 +296,7 @@ end
 
 end # /module
 
-include RicColors
 
 #$colors_active = ! RicColor.daltonic_terminal? # DEFAULT: active
+
+
