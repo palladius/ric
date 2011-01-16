@@ -1,2 +1,5 @@
 
-- aggiunta gem, seguiti consigli wqui:
+= GEMS HOWTO =
+
+ - Change ./Rakefile
+ - 

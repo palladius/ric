@@ -50,7 +50,7 @@ images/photos/Riccardo/Riccardo sunglasses IFSC.jpg
 images/photos/Riccardo/Riccardo with Delgado.jpg
 images/photos/Riccardo/Riccardo yellow with Mac.jpg
 images/photos/ricarrabbiato.jpg
+lib/ric_colors.rb
 lib/ric_html.rb
 lib/riclib.rb
-riclib.gemspec
 var/www/index.html
