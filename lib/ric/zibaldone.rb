@@ -3,7 +3,6 @@
 module Ric
   module Zibaldone
     
-    
     def self.gemdir
       File.dirname( File.dirname(__FILE__) + '/../../..' ) # Im in lib/ric/zibaldone.rb
     end
