@@ -26,7 +26,7 @@ module Ric
       puts( ret )
       ret
     end
-    alias :help  :ric_help
+    #alias :help  :ric_help
     #alias :about :ric_help
   
     def self.gemdir

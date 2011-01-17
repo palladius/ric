@@ -15,4 +15,8 @@ require 'ric/zibaldone'
 #puts "Ric: lib/riccardo_includes.rb Test Welcome to Riccardo Carlesso first gem :)"
 module Ric
   
+  def self.ric_help
+    puts :TODO
+  end
+  
 end

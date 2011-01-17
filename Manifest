@@ -5,6 +5,7 @@ README.md
 Rakefile
 TODO
 VERSION
+bin/VERSION-symlink
 bin/itunes
 bin/ric
 bin/riclib-test
@@ -15,10 +16,8 @@ lib/ric.rb
 lib/ric/colors.rb
 lib/ric/html.rb
 lib/ric/zibaldone.rb
-lib/riccardo_includes.rb
 lib/ruby_classes/strings.rb
 lib/tmp/uniquify.rb
 rails/init.rb
-ric.gemspec
 sbin/reboot.rb
 var/www/index.html
