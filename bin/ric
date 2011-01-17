@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'ric'
 
-puts "Welcome to ric, the swiss-army knife tool from Riccardo, included in riclib gem (v#{Ric.version})"
+def main
+  require 'ric' #, :version => '0.9.7'
+  ver = Ric::Zibaldone.version rescue "UnknownVersionErr(#{$!})"
+  puts "Welcome to ric, the swiss-army knife tool from Riccardo, included in riclib gem (version=#{ver})"
+  pyellow 'ciao' rescue "Errors with color yellow: #{$!}"  
+end
 
-#include RicColors
-#Colors.pyellow 'ciao'
+main

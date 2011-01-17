@@ -14,3 +14,14 @@
   rake release
 
 # Its pushed on gemcutter, yay!
+
+== DEBUGGING ==
+I have no clue on how to debug it!
+Some gems (like 0.9.7) load perfectly ewithout loading rubygems before.
+Others (0.10.1) dont load at all with stupid messages.
+
+SIGH.
+
+Somethings I tried:
+
+- always ruby init.rb # on the root
