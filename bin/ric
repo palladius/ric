@@ -15,7 +15,7 @@ def main
   puts "Welcome to ric, the swiss-army knife tool from Riccardo,\n included in riclib gem (version=#{ver})"
   pyellow 'ciao' rescue "Errors with color yellow: #{$!}"  
   Ric::Zibaldone.say_hello()
-
+  Ric::Html.anything_to_html( {:simbolo => 'stringa' } )
 end
 
 main

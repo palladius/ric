@@ -7,7 +7,7 @@ module Ric
   
   # REMOVE ME!
   def anything_to_html(son,opts={})
-    ret = '(RailsHelper :: anything_to_html)' if opts.fetch(:verbose,true) # TODO change dflt to false
+    ret = '(Ric::Html.anything_to_html)' if opts.fetch(:verbose,true) # TODO change dflt to false
     if opts != {}
     ret << "(Options: " + anything_to_html(opts) + ")"
     end

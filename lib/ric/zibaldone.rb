@@ -9,7 +9,8 @@ module Ric
     
     def self.version
       # TODO memoize/cache this into @@version
-      File.read( File.expand_path('VERSION' , gemdir() ) )
+      ver = File.read( File.expand_path('VERSION' , gemdir() ) )
+      "(v.#{ver})" # for debug
     end
   
     def self.say_hello
