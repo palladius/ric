@@ -2,7 +2,7 @@
 # Riccardo New Stuff
 #require 'ric/colors'
 #require 'ric/html'
-#require 'ric/zibaldone'
+require 'ric/zibaldone'
 
 # riccardo Old SVN repository...
 # require 'ruby_classes/strings'
