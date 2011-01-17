@@ -5,7 +5,7 @@ $ver = '1.1'
 def main
   require 'rubygems'
   require 'ric' 
-  #include Ric::Zibaldone
+  include Ric::Colors
   
   dir = File.dirname( File.dirname(__FILE__) + '/../..' )
   ver_manual = File.read( File.expand_path('VERSION',dir) )

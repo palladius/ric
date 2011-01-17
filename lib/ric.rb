@@ -14,10 +14,12 @@ require 'ric/zibaldone'
 
 #puts "Ric: lib/riccardo_includes.rb Test Welcome to Riccardo Carlesso first gem :)"
 module Ric
-  include Ric::Colors
+  #include Ric::Colors
   
   def self.ric_help
     puts :TODO
   end
   
 end
+
+include Ric::Colors
