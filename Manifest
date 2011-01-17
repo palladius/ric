@@ -18,7 +18,6 @@ lib/ric/zibaldone.rb
 lib/ruby_classes/strings.rb
 lib/tmp/uniquify.rb
 rails/init.rb
-ric.gemspec
 sbin/reboot.rb
 sbin/ric_reboot.rb
 var/www/index.html
