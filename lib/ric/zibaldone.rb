@@ -2,10 +2,15 @@
 
 module Ric
   module Zibaldone
-
+    
+    
+    def self.gemdir
+      File.dirname( File.dirname(__FILE__) + '../' )
+    end
+    
     def self.version
       # TODO memoize/cache this into @@version
-      File.read( File.expand_path('VERSION' , Ric.gemdir ) )
+      File.read( File.expand_path('VERSION' , gemdir() ) )
     end
   
     def self.say_hello
@@ -28,10 +33,6 @@ module Ric
     end
     #alias :help  :ric_help
     #alias :about :ric_help
-  
-    def self.gemdir
-      File.dirname( File.dirname(__FILE__) + '../' )
-    end
   
   end #/Zibaldone
 end #/Ric

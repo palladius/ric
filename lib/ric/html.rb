@@ -34,6 +34,5 @@ module Ric
     ret.html_safe
   end
   
-  
  end #/Html
 end #/Ric

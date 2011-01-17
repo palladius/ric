@@ -1,7 +1,7 @@
 
 # Riccardo New Stuff
 #require 'ric/colors'
-#require 'ric/html'
+require 'ric/html'
 require 'ric/zibaldone'
 
 # riccardo Old SVN repository...
