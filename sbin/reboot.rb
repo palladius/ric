@@ -1,2 +1,3 @@
+#!/usr/bin/env ruby
 
-puts 'test reboot... only root should be able to do this'
+puts 'Ric: test reboot... only root should be able to do this'

@@ -9,7 +9,7 @@ module Ric
     end
   
     def self.say_hello
-      puts "Ric: Hello world by #{yellow 'Riccardo Carlesso' rescue 'Riccardo Carlesso Error'}"
+      puts "Ric::Zibaldone.say_hello(): This hello is brought to you by ''#{yellow 'Riccardo Carlesso' rescue 'Riccardo Carlesso (Error with color yellow)'}''"
     end
   
     def self.ric_help
