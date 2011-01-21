@@ -4,7 +4,7 @@
   
 module Ric
  module Colors
-  $version = 'Ric::Colors::v1.0.4orly'
+  $version = 'Ric::Colors::v1.0.5'
   $colors_active = true # DEFAULT: active
   
   $color_db = [
