@@ -4,14 +4,15 @@
 
 Welcome to ''ric'' (formerly known as 'riclib').
 
-This is [my](http://www.palladius.it/) first public repository with icons code and stuff.
+This is my first public repository with icons code and stuff.
 
 Modern life is RUBYish, so am I ;-)
 
-<font color='red'>Notice</font>. On 24jan2011 I renamed the `riclib` repository to `ric`, to harmonize with GEM name. Updating VERSION soon as well.
+<font color='red'>Notice</font>. 
+On 24jan2011 I renamed the `riclib` repository to `ric`, to harmonize with GEM name. Updating VERSION soon as well.
 
-* [ric](http://rubygems.org/gems/ric)
-* <s>[Riclib](http://github.com/palladius/riclib)</s> (BROKEN!)
+* [ric](http://rubygems.org/gems/ric) as a gem.
+* [Ric](http://github.com/palladius/ric) on github.
 
 ## Installation
 
