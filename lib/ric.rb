@@ -23,3 +23,4 @@ module Ric
 end
 
 include Ric::Colors
+include Ric::Debug
