@@ -13,6 +13,7 @@ lib/rails/acts_as_carlesso.rb
 lib/rails/helpers/rails_helper.rb
 lib/ric.rb
 lib/ric/colors.rb
+lib/ric/debug.rb
 lib/ric/html.rb
 lib/ric/zibaldone.rb
 lib/ruby_classes/strings.rb
