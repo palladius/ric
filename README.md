@@ -25,8 +25,11 @@ To use Ric in a Rails 3 application:
 
 * [Riccardo Carlesso](http://github.com/palladius) ([website](http://www.palladius.it/))
 * A few other projects:
-** Addressbook
-** [Septober](http://septober.heroku.com/)
+
+- [Septober](http://septober.heroku.com/)
+
+- [Addressbook](http://ricaddressbook.heroku.com/)
+
 ## Copyright & License
 
 Ric is Copyright (c) 2010-11 [Riccardo Carlesso](http://www.palladius.it/), and is released under GPLv3 license.
