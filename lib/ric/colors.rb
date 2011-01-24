@@ -1,7 +1,40 @@
 #!/usr/bin/env ruby
-
-  # $Id: ric_colors.rb 5438 2010-12-16 15:06:29Z rcarlesso $
   
+
+  ###################################################################################################################
+  # COLORS LIBRARY
+=begin
+  Somewhere I took this for good terminal colors:
+  
+    colour_codes = {
+            'black':        '\033[0;30m',
+            'red':          '\033[0;31m',
+            'green':        '\033[0;32m',
+            'yellow':       '\033[0;33m',
+            'blue':         '\033[0;34m',
+            'magenta':      '\033[0;35m',
+            'cyan':         '\033[0;36m',
+            'white':        '\033[0;37m',
+            'darkgray':     '\033[1;30m',
+            'br-red':       '\033[1;31m',
+            'br-green':     '\033[1;32m',
+            'br-yellow':    '\033[1;33m',
+            'br-blue':      '\033[1;34m',
+            'br-magenta':   '\033[1;35m',
+            'br-cyan':      '\033[1;36m',
+            'br-white':     '\033[1;37m',
+            'ul-black':     '\033[4;30m',
+            'ul-red':       '\033[4;31m',
+            'ul-green':     '\033[4;32m',
+            'ul-yellow':    '\033[4;33m',
+            'ul-blue':      '\033[4;34m',
+            'ul-magenta':   '\033[4;35m',
+            'ul-cyan':      '\033[4;36m',
+            'ul-white':     '\033[4;37m',
+            'default':      '\033[0m'
+    }
+=end
+
 module Ric
  module Colors
   $version = 'Ric::Colors::v1.0.5'
@@ -218,57 +251,6 @@ module Ric
   end
 
 
-  ###################################################################################################################
-  # COLORS LIBRARY
-=begin
-  	nero)		shift; echo -en "\033[0;30m$*\033[0m\n" ;;
-  	rossone)	shift; echo -en "\033[0;31m$*\033[0m\n" ;;
-  	verdone) 	shift; echo -en "\033[0;32m$*\033[0m\n" ;;
-  	marrone)	shift; echo -en "\033[0;33m$*\033[0m\n" ;;
-  	bluino)   	shift; echo -en "\033[0;34m$*\033[0m\n" ;;
-  	porpora) 	shift; echo -en "\033[0;35m$*\033[0m\n" ;;
-  	ciano)   	shift; echo -en "\033[0;36m$*\033[0m\n" ;;
-  	grigino)  	shift; echo -en "\033[0;37m$*\033[0m\n" ;;
-
-  	grigione)	shift; echo -en "\033[1;30m$*\033[0m\n" ;;
-  	rosso)		shift; echo -en "\033[1;31m$*\033[0m\n" ;;
-  	verde)	 	shift; echo -en "\033[1;32m$*\033[0m\n" ;;
-  	giallo)		shift; echo -en "\033[1;33m$*\033[0m\n" ;;
-  	blu)  	 	shift; echo -en "\033[1;34m$*\033[0m\n" ;;
-  	viola) 	 	shift; echo -en "\033[1;35m$*\033[0m\n" ;;
-  	azzurro)   	shift; echo -en "\033[1;36m$*\033[0m\n" ;;
-  	bianco)  	shift; echo -en "\033[1;37m$*\033[0m\n" ;;
-
-  	arancio) 	shift; echo -en "\033[5;31m$*\033[0m\n" ;;
-	
-    colour_codes = {
-            'black':        '\033[0;30m',
-            'red':          '\033[0;31m',
-            'green':        '\033[0;32m',
-            'yellow':       '\033[0;33m',
-            'blue':         '\033[0;34m',
-            'magenta':      '\033[0;35m',
-            'cyan':         '\033[0;36m',
-            'white':        '\033[0;37m',
-            'darkgray':     '\033[1;30m',
-            'br-red':       '\033[1;31m',
-            'br-green':     '\033[1;32m',
-            'br-yellow':    '\033[1;33m',
-            'br-blue':      '\033[1;34m',
-            'br-magenta':   '\033[1;35m',
-            'br-cyan':      '\033[1;36m',
-            'br-white':     '\033[1;37m',
-            'ul-black':     '\033[4;30m',
-            'ul-red':       '\033[4;31m',
-            'ul-green':     '\033[4;32m',
-            'ul-yellow':    '\033[4;33m',
-            'ul-blue':      '\033[4;34m',
-            'ul-magenta':   '\033[4;35m',
-            'ul-cyan':      '\033[4;36m',
-            'ul-white':     '\033[4;37m',
-            'default':      '\033[0m'
-    }
-=end
 
   class RicColor < String
       attr :color
