@@ -1,11 +1,8 @@
 
-## #!/usr/bin/env ruby
-
-  # $Id: ric_colors.rb 5438 2010-12-16 15:06:29Z rcarlesso $
-  
 module Ric
  module Debug
   # $DEBUG
+  $ric_debug_module = 'yes it was loaded'
   
   def debug_on(comment='Debug Activated (some lazy guys didnt provide a description :P)')
     $DEBUG = true
@@ -13,6 +10,13 @@ module Ric
   
   def deb(str)
     puts "#DEB# #{str}" if $DEBUG
+  end
+  
+  class RicDebug
+    def self.help
+      puts 'TODO RicDebug. This is experimental, u shouldnt use this at all!'
+    end
+    
   end
 
  end # /module Colors
