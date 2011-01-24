@@ -1,7 +1,7 @@
 # would like to have this in YML format :)
 
-2011-01-16 v0.10.5:
- - Added Ric::Debug with deb and debug_on
+2011-01-24 v0.10.7:
+ - Added Ric::Debug with deb and debug_on (and merged)
 2011-01-16 v0.10.1:
  - moving everything! Its a miracle if it still works.. in fact it doesnt
 2011-01-16 v0.9.7:

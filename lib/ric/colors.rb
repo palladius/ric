@@ -4,12 +4,13 @@
   
 module Ric
  module Colors
-  
+  $version = 'Ric::Colors::v1.0.5'
   $colors_active = true # DEFAULT: active
+  
   $color_db = [
-    %w{ normal  black dkblack  red     green brown   blue purple  cyan  lgray   gray     lred    lgreen  yellow lblue violet azure   white  orange   orangey magenta lyellow  pink     gold } , # english word
-    %w{ normale nero  nerone   rosso   verde marrone blu  porpora ciano grigino grigione rossino verdino giallo lblu  viola  azzurro bianco arancio  arancino magenta giallino rosa     oro } , # italian word
-    %w{ 0;37    0;30  38;5;236 0;31    1;32  38;5;94 0;34 1;35    0;36  0;37    1;30     1;31    1;32    1;33   1;34  1;35   1;36    1;37   38;5;208 38;5;222 0;35    38;5;229 38;5;203 38;5;214  } ,
+    %w{ normal  black dkblack  red     green brown   blue purple  cyan  lgray   gray     lred    lgreen  yellow lblue violet azure   white  orange   orangey magenta lyellow  pink     gold      orly     heanet  } , # english word
+    %w{ normale nero  nerone   rosso   verde marrone blu  porpora ciano grigino grigione rossino verdino giallo lblu  viola  azzurro bianco arancio  arancino magenta giallino rosa     oro      orla     indaco  } , # italian word
+    %w{ 0;37    0;30  38;5;236 0;31    1;32  38;5;94 0;34 1;35    0;36  0;37    1;30     1;31    1;32    1;33   1;34  1;35   1;36    1;37   38;5;208 38;5;222 0;35    38;5;229 38;5;203 38;5;214 38;5;214 38;5;93 } ,
     %w{ 000     000   222      f00     0f0           00f  ff0     0ff   aaa     888      f00     afa     ff0                                                                    eebb00 } # HEX RGB
     ]
       # rifallo, e' piu' manutenibile...
@@ -25,7 +26,7 @@ module Ric
     set_color :on #(true)
   end
   def colors_off
-    set_color :off #(false)
+    set_color(false)
   end
   
     # TODO support a block (solo dentro l blocco fai il nocolor)

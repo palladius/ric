@@ -1,4 +1,5 @@
-#!/usr/bin/env ruby
+
+## #!/usr/bin/env ruby
 
   # $Id: ric_colors.rb 5438 2010-12-16 15:06:29Z rcarlesso $
   
@@ -11,7 +12,7 @@ module Ric
   end
   
   def deb(str)
-    puts "#DEB# #{str}"
+    puts "#DEB# #{str}" if $DEBUG
   end
 
  end # /module Colors
