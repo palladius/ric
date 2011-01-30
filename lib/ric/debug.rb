@@ -28,7 +28,7 @@ module Ric
       puts( final_str ) if ((really_write && $DEBUG) || write_always) && ! opts[:tag]
     end
   end #/debug2() 
-  alias :deb :debug
+  alias :debug :deb
   
   class RicDebug
     def self.help
