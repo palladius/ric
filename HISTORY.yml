@@ -1,4 +1,6 @@
 # would like to have this in YML format :)
+2011-01-24 v0.11.2:
+ - Added debug() alias
 2011-01-24 v0.11.1:
  - 'trying to better link ric/debug, I hope God wants its the good one!!'
 2011-01-24 v0.11.0:
