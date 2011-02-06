@@ -13,11 +13,12 @@ module Ric
      verbose = opts.fetch :verbose, true
 
      unless File.exists?("#{to}/.git")
-       fatal "Sorry cant travase data to an unversioned dir, u'know the casin?!?"
+       fatal 11,"Sorry cant travase data to an unversioned dir. Please version it with git (or add a .git dir/file to trick me)"
        exit 1
      end
      unless File.exists?("#{to}/.safe_xcopy")
-       fatal 12, "Sorry cant travase data unless you ask me to. You have to do this before:\n  #{yellow "touch #{to}/.safe_xcopy"} . Thanks"
+       fatal 12, "Sorry I refuse to xcopy data unless you explicitly ask me to. You have to do this before:\n  #{yellow "touch #{to}/.safe_xcopy"} . 
+       You are for sure a very smart person but there are a LOT of people out there who could destroy theyr file system! Thanks"
      end
 
      # With this i can understand what has been deleted, with lots of magic from git on both ends.. :)

@@ -17,72 +17,23 @@
   $DEBUG    = false
   
   $myconf = {
-    'app_name'  => 'xcopy',
-    'author'    => 'Riccardo Carlesso <riccardo.carlesso@gmail.com>'
-    'from'      => '~/git/yaffle_guide/vendor/plugins/ric_admin/',
-    'to'        => '~/git/ric_admin/',
-    'files'     => ["**/{*.{rb,sh}}", 'README', 'VERSION', 'HISTORY.yml', 'Rakefile' , '.gitignore' ],
-    'dryrun'    => true
+      'author'      => 'Riccardo Carlesso <riccardo.carlesso@gmail.com>',
+      'description' => 'Please put an interesting description HERE for future use!',
+      'from'        => '~/Documents/',
+      'to'          => '/tmp/my_docs_backup/',
+      'files'       => ["**/{*.{mp3,jpg}}", 'README', 'put', 'your', 'files', 'here' ],
+      'dryrun'      => true,
   }
 
-  def usage(comment=nil)
-    puts "#{$0} v.#{$PROG_VER}"
-    puts "Usage2: #{File.basename $0} [-dhjv] [-l LOGFILE] <FOO> <BAR>"
-    puts $opts
-    pred comment if comment
-    exit 11
-  end
-  
-  # refactored in lib/ric/files.rb
-  
- # # similar to xcopy
- # def travasa(from,to,glob_files, opts={})
- #   n_actions = 0
- #   puts "+ Travasing: #{yellow from} ==> #{green to}"
- #   verbose = opts.fetch :verbose, true
- #
- #   unless File.exists?("#{to}/.git")
- #     fatal 1,"Sorry cant travase data to an unversioned dir, u'know the casin?!?"
- #     exit 1
- #   end
- #   unless File.exists?("#{to}/.safe_travasa")
- #     fatal 12, "Sorry cant travase data unless you ask me to. You have to do this before:\n  #{yellow "touch #{to}/.safe_travasa"} . Thanks"
- #   end
- #
- #   # With this i can understand what has been deleted, with lots of magic from git on both ends.. :)
- #   deb "+ First the differences:"
- #   deb `diff -qr #{from} #{to} |egrep -v '\\.git' `
- #
- #   puts "+ Files: #{cyan glob_files}"
- #   Dir.chdir(from)
- #   Dir.glob(glob_files).each{ |file|
- #     from_file = "#{from}/#{file}"
- #     to_file   = "#{to}/#{file}"
- #     destdir = File.dirname(to_file)
- #     deb "Copying: #{yellow from_file}.."
- #     #  could need creating the dir..
- #     if File.exists?(destdir)
- #       # just copy the file
- #       command = "cp \"#{from_file}\" \"#{to_file}\""
- #     else
- #       # mkdir dest AND copy file
- #       pred "Hey, Dir '#{destdir}' doesnt exist! Creating it.."
- #       command = "mkdir -p \"#{destdir}\" && cp \"#{from_file}\" \"#{to_file}\""
- #     end
- #     
- #     if opts.fetch(:dryrun, false)
- #       puts "[DRYRUN] Skipping #{gray command}"
- #     else
- #       ret =  `#{command} 2>&1`
- #       puts "EXE: #{gray command}" if verbose
- #       n_actions += 1
- #       print( "[ret=$?]", ret, "\n") if (ret.length > 1 || $? != 0) # if output or not zero
- #     end
- #   }
- #   puts "#{n_actions} commands executed."
- # end
-
-  def real_program
+  #def usage(comment=nil)
+  #  puts "#{$0} v.#{$PROG_VER}"
+  #  puts "Usage: #{File.basename $0} [-dhjv] [-l LOGFILE] <FOO> <BAR>"
+  #  puts $opts
+  #  pred comment if comment
+  #  exit 11
+  #end
+ 
+  def main
     debug_on 'Just created script, presuming u need some debug. TODO REMOVE ME when everything works!' if $DEBUG
       # Maybe you may want to check on ARGV
     deb "+ Your configuration: #{purple $myconf}"
@@ -93,11 +44,13 @@
       File.expand_path(myconf['from']), 
       File.expand_path(myconf['to']), 
       myconf['files']  , 
-      :dryrun => myconf['dryrun'] 
+      myconf
+      #‘’:dryrun      => myconf['dryrun'] ,
+      #‘’:description => myconf['dryrun'] ,
     )
   end
   
-  # remove me in 0.11.7!
+  # remove me in 0.11.8!
   def fatal(ret,str=nil)
     unless str
       str = ret
@@ -107,10 +60,4 @@
     exit ret
   end
 
-  def main()
-    #lib_autoinit # if u dont like the autoinit, uncomment init :)
-    real_program 
-  end
-
-  #lib_automain(__FILE__)
   main
