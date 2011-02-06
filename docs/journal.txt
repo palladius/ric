@@ -11,6 +11,7 @@
 
 == deploy ==
 
+	rake build
   rake release
 
 # Its pushed on gemcutter, yay!
