@@ -25,14 +25,6 @@
       'dryrun'      => true,
   }
 
-  #def usage(comment=nil)
-  #  puts "#{$0} v.#{$PROG_VER}"
-  #  puts "Usage: #{File.basename $0} [-dhjv] [-l LOGFILE] <FOO> <BAR>"
-  #  puts $opts
-  #  pred comment if comment
-  #  exit 11
-  #end
- 
   def main
     debug_on 'Just created script, presuming u need some debug. TODO REMOVE ME when everything works!' if $DEBUG
       # Maybe you may want to check on ARGV
@@ -43,21 +35,19 @@
     xcopy(
       File.expand_path(myconf['from']), 
       File.expand_path(myconf['to']), 
-      myconf['files']  , 
-      myconf
-      #‘’:dryrun      => myconf['dryrun'] ,
-      #‘’:description => myconf['dryrun'] ,
+      myconf['files']  ,       #myconf
+      :dryrun      => myconf['dryrun'] 
     )
   end
   
-  # remove me in 0.11.8!
-  def fatal(ret,str=nil)
-    unless str
-      str = ret
-      ret = 66
-    end
-    STDERR.puts "#{red 'XCpFatal (remove me from gem 0.11.7!)'}(#{ret}) #{str}"
-    exit ret
-  end
+  ## remove me in 0.11.8!
+  #def fatal(ret,str=nil)
+  #  unless str
+  #    str = ret
+  #    ret = 66
+  #  end
+  #  STDERR.puts "#{red 'XCpFatal (remove me from gem 0.11.7!)'}(#{ret}) #{str}"
+  #  exit ret
+  #end
 
-  main
+  main()

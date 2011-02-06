@@ -11,6 +11,7 @@ module Ric
      n_actions = 0
      puts "+ Travasing: #{yellow from} ==> #{green to}"
      verbose = opts.fetch :verbose, true
+     dryrun  = opts.fetch :dryrun,  true  # i scared of copying files!
 
      unless File.exists?("#{to}/.git")
        fatal 11,"Sorry cant travase data to an unversioned dir. Please version it with git (or add a .git dir/file to trick me)"
@@ -24,6 +25,8 @@ module Ric
      # With this i can understand what has been deleted, with lots of magic from git on both ends.. :)
      deb "+ First the differences:"
      deb `diff -qr #{from} #{to} |egrep -v '\\.git' `
+     
+     puts "Dryrun is: #{azure dryrun}"
 
      puts "+ Files: #{cyan glob_files}"
      Dir.chdir(from)
@@ -42,7 +45,7 @@ module Ric
          command = "mkdir -p \"#{destdir}\" && cp \"#{from_file}\" \"#{to_file}\""
        end
 
-       if opts.fetch(:dryrun, false)
+       if dryrun
          puts "[DRYRUN] Skipping #{gray command}"
        else
          ret =  `#{command} 2>&1`
