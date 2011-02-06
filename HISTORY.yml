@@ -1,5 +1,7 @@
 # would like to have this in YML format :)
-2011-01-24 v0.11.4:
+2011-02-06 v0.11.5:
+ - Added septober binary
+2011-02-06 v0.11.4:
  - Added some tests but they dont work :P
 2011-01-24 v0.11.3:
  - Added debug() alias
