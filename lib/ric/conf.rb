@@ -1,6 +1,7 @@
 module Ric
  module Conf
    
+   require 'yaml'
 
 =begin
 This wants to be a magic configuration loader who looks for configuration automatically in many places, like:

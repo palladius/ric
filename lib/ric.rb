@@ -17,4 +17,6 @@ module Ric
 end
 
 include Ric::Colors
+include Ric::Conf
 include Ric::Debug
+include Ric::Files

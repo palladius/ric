@@ -1,4 +1,7 @@
 # would like to have this in YML format :)
+2011-02-06 v0.11.7:
+ - small small bug that forced u to include require yaml..
+ - added debug funcs like 'fatal' and 'warning'
 2011-02-06 v0.11.6:
  - Added xconf
 2011-02-06 v0.11.5:
