@@ -25,6 +25,7 @@ lib/tmp/uniquify.rb
 rails/init.rb
 sbin/reboot.rb
 sbin/ric_reboot.rb
+test/sample_conf.yml
 test/strings_helper.rb
 test/test_helper.rb
 var/www/index.html
