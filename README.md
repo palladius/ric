@@ -33,5 +33,5 @@ To use Ric in a Rails 3 application:
 
 ## Copyright & License
 
-Ric is Copyright (c) 2010-11 [Riccardo Carlesso](http://www.palladius.it/), and is released under GPLv3 license.
+Ric is Copyright (c) 2011-11 [Riccardo Carlesso](http://www.palladius.it/), and is released under GPLv3 license.
 
