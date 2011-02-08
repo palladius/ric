@@ -14,13 +14,14 @@
    septober.heroku.com client to add and list todos!
    
   @history:
+    0.9.5 2011-02-08 more concise 'add'
     0.9.4 2011-02-04 added 'done' action (and 'delete' ?)    
     0.9.3 2011-02-04 better 'list'    
     0.9.2 2011-02-04 'add' operation succefully added!   
     0.9.1 2011-01-18 First version
  ############################################################
 =end
-  $PROG_VER = '0.9.4'
+  $PROG_VER = '0.9.5'
 
   require 'optparse'       
   require 'rubygems'
@@ -149,8 +150,13 @@
     } if all
   end
   
+=begin
+  Adds a todo with just the subject, the server takes it and parses and does the magic
+  to assing the correct ptoject and stuff..
+=end
   def todo_add(words_from_argv)
     puts bannerino( "Add(#{words_from_argv})" )
+    # TODO put this into begin/end/catch !!!
     t = RemoteTodo.create( 
       :name => words_from_argv, 
       :description => "sent by CLI #{$0} v.#{$PROG_VER}, due tomorrow by test", 
@@ -161,13 +167,10 @@
       #:priority => 4 
     )
     deb "DEB todo: #{t}"
-    ret = t.save
-    if t.errors 
-      pred "Some errors: '#{t.errors.full_messages}'"
-    end
-    #puts "save returned: #{ret}"
+    ret = t.save    
+    puts "Some errors: '#{red t.errors.full_messages.to_s}'" if t.errors and t.errors.to_s != ''
     if ret
-      pgreen "Todo created successfully:\n  #{t.inspect}" 
+      puts "Todo created successfully: ##{green t.id.to_s}" # just provides the Id 
     else
       pred "Some error saving todo: #{t.inspect}"
     end
