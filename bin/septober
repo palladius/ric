@@ -13,7 +13,14 @@
   @description:
    septober.heroku.com client to add and list todos!
    
+   TODO
+   - add --conf|-c    : to change configuration file
+   - add --context|-x : to change context (--local => --context 'local' , default: "septober" )
+   
+   API: add actions (done, toggle, ..., due <today|tomorrow|monday> )
+   
   @history:
+    0.9.6 2011-02-09 CLI supports --conf now. Tags working!
     0.9.5 2011-02-08 more concise 'add'
     0.9.4 2011-02-04 added 'done' action (and 'delete' ?)    
     0.9.3 2011-02-04 better 'list'    
@@ -21,7 +28,7 @@
     0.9.1 2011-01-18 First version
  ############################################################
 =end
-  $PROG_VER = '0.9.5'
+  $PROG_VER = '0.9.6'
 
   require 'optparse'       
   require 'rubygems'
@@ -35,10 +42,42 @@
     :app_name            => 'septober client',
     :hello               => 'Welcome to this terrific application',
     :septober_url        => 'http://septober.heroku.com/' , 
-    :dflt_config         => '~/.septober.yml' , 
+    :dflt_config_file         => '~/.septober.yml' , 
     :local               => false ,
   }
+  
+  def init
+    #$opts = {}
+    optparse = OptionParser.new do |opts|
+      opts.on( '-c', '--config <FILE>', 'uses a different configfile from: '+$opts[:dflt_config_file] ) {|arg_file|  $opts[:config_file] = arg_file  }
+      opts.on( '-d', '--debug', 'enables debug (DFLT=false)' )  {  $opts[:debug] = true ; $debug = true ; debug_on('Debug enabled from ARGV')}
+      opts.on( '-h', '--help', 'Display this screen' )          {  puts(opts); exit 1 }
+      opts.on( '-j', '--jabba', 'Activates my Jabber powerful CLI' ) {  $opts[:jabba] = true  }
+      opts.on( '-l', '--local', 'uses local instead' )    {  $opts[:local] = true }
+      opts.on( '-v', '--verbose', 'Output more information' )   { $opts[:verbose] = true}
 
+      opts.banner = <<-API_OPTIONS
+#{$0} v.#{$PROG_VER}
+Usage: #{File.basename $0} [options] [add|list|done|del] [args]
+
+  API Actions (T stands for ToBeDoneYet ):
+    add <FREE TEXT>            # adds new task in free text with some magic..
+    delete <ID>                # T delete ticket.ID (DONT USE IF U CAN!)
+    done <ID>                  # T posts ticket.ID :done (resolved)
+    list                       # shows a list of your todos yet to complete
+    mail <ID>                  # T mail to yourself ticket.ID !!!
+    show <ID>                  # shows details about todo with id=ID
+    procrastinate <ID> <NDAYS> # T mail to yourself ticket.ID !!!
+    sleep <ID> <NDAYS>         # T mail to yourself ticket.ID !!!
+
+  Options:    
+      API_OPTIONS
+    end
+    optparse.parse! 
+    RemoteTodo.import_config()
+  end
+  
+  #################################################################################################################################################
   class RemoteTodo < ActiveResource::Base
     self.site = "http://septober.example.com/" # uninitialized
     self.element_name = 'todo'
@@ -49,14 +88,13 @@
        site: "http://localhost:3000/api/"   # or http://septober.heroku.com/api/
        user: guest
        password: guest'
-    
     # self.ssl_options = {:cert         => OpenSSL::X509::Certificate.new(File.open(pem_file))
     #                        :key          => OpenSSL::PKey::RSA.new(File.open(pem_file)),
     #                        :ca_path      => "/path/to/OpenSSL/formatted/CA_Certs",
     #                        :verify_mode  => OpenSSL::SSL::VERIFY_PEER}
     
     def self.import_config(file=nil)
-      file ||= $opts[:dflt_config]
+      file ||= $opts[:dflt_config_file]
       real_file = File.expand_path file
       deb "Importing config from #{file}.."
       if File.exists?(real_file)
@@ -96,46 +134,45 @@
     
     def priority_str(priority)
       case priority.to_s
-        when '1' ; return '--'
-        when '2' ; return '-'
-        when '3' ; return ' '
-        when '4' ; return '!'
-        when '5' ; return '!!'
+        when '1'; return '--'
+        when '2'; return '-'
+        when '3'; return ' '
+        when '4'; return '!'
+        when '5'; return '!!'
       end
       return "'?' #{priority}"
     end
 
     def show_entry(opts={})
       mywhere = where ? azure( " @#{where}") : ''
+      mytags = (tag_list != [] ? 
+        ' '+tag_list.map{|tag| purple("@#{tag}")}.join(' ') : 
+        '' 
+      ) rescue ''
       return sprintf "%-3d %-30s %2s %s %s%s",
-        id, colored_project_name , priority_str(priority), colored_due_explaination(due), name, mywhere
+        id, colored_project_name , priority_str(priority), colored_due_explaination(due), name, mywhere+mytags
     end
     
     def show_full_entry(opts={})
-      attributes = %w{name id due where url progress_status active description }
+      attributes = %w{
+        name id 
+        due hide_until   
+        active depends_on_id 
+        photo_url progress_status 
+        source tag_list 
+        url where
+      }
       key_vals = attributes.map{|attr| [attr,send(attr)] } # array of [key, val]
-      key_vals << ['ProjectName', project.name ]
-      key_vals.map{ |k,v| "#{k}: #{v}" }.join("\n")
+      key_vals << ['ProjectName', "#{project.name} (#{project.color.to_s.send( project.color ) rescue project.color})" ]
+      #key_vals << ['PjColor', project.color ]
+      key_vals.map{|k,v| [k,v] }.sort{|x,y| x.first <=> y.first }.map{ |k,v| "#{k}: #{v}" }.join("\n") +
+        "\n--\n#{description}"
     end
   end # /RemoteTodo
-  
+  #################################################################################################################################################
   
   #############################
   # Program start..
-  
-  def usage(comment=nil)
-    puts "#{$0} v.#{$PROG_VER}"
-    puts "Usage: #{File.basename $0} [-dhjv] [--local] [--no-colors] OPTIONS"
-    puts "  add <FREE TEXT> # V adds new task in free text with some magic.."
-    puts "  delete <ID>     # T delete ticket.ID (DONT USE IF U CAN!)"
-    puts "  list            # V shows a list of your todos yet to complete"
-    puts "  show <ID>       # V shows details about todo with id=ID"
-    puts "  done <ID>       # T posts ticket.ID :done (resolved)"
-    puts "  mail <ID>       # T mail to yourself ticket.ID !!!"
-    #puts "  search <QUERY>  # look for TODOs relating to 'QUERY' string"
-    pred comment if comment
-    exit 78
-  end
   
   def bannerino(desc)
     "#Todo #{white desc.to_s} (user: #{blue RemoteTodo.user}@#{cyan RemoteTodo.site.to_s.split('/')[2] })"
@@ -147,6 +184,7 @@
     all = RemoteTodo.find(:all)
     all.each{|todo|
       puts( todo.show_entry ) unless( show_only_active && ! todo.active )
+      deb "Full ToString for #{white todo}:\n\t#{todo.inspect}"
     } if all
   end
   
@@ -188,7 +226,7 @@
     todo_generic_put(id,:done)
   end
   def todo_toggle(id,done_or_undone=true)
-    todo_generic_put(id,:done)
+    todo_generic_put(id,:toggle)
   end
   
   def todo_generic_put(id,action,opts={})
@@ -213,34 +251,19 @@
     pred "To Be implemented Yet"
   end
   
-  def init
-    #$opts = {}
-    optparse = OptionParser.new do |opts|
-      opts.banner = "#{$0} v.#{$PROG_VER}\n Usage: #{File.basename $0} [add|list|done|del] [args]"
-      opts.on( '-c', '--config', 'uses a different configfile from: '+$opts[:dflt_config] ) {  $opts[:jabba] = true  }
-      opts.on( '-d', '--debug', 'enables debug (DFLT=false)' )  {  $opts[:debug] = true  }
-      opts.on( '-h', '--help', 'Display this screen' )          {  puts(opts); exit 1 }
-      opts.on( '-j', '--jabba', 'Activates my Jabber powerful CLI' ) {  $opts[:jabba] = true  }
-      opts.on( '-l', '--local', 'uses local instead' )    {  $opts[:local] = true }
-      opts.on( '-v', '--verbose', 'Output more information' )   { $opts[:verbose] = true}
-    end
-    optparse.parse! 
-    RemoteTodo.import_config()
-  end
 
   def main()
     init()
       # Maybe you may want to check on ARGV
-    unless ARGV.size > 0
-      usage "Give me at least 1 argument" # Maybe default to list?!? 
-    end
-    # i dont need it for help :)
+    #unless ARGV.size > 0
+    #  usage "Give me at least 1 argument" # Maybe default to list?!? 
+    #end
     case ARGV[0]
       when 'list' ;    todo_list()
       when 'show' ;    todo_show(ARGV[1])
       when 'done' ;    todo_done(ARGV[1],true)
       when 'add'  ;    todo_add(ARGV[1..-1].join(' ')) # all except last one
-      else ;           usage "Unrecognized command: #{ARGV[0]}"
+      #else ;           usage "Unrecognized command: #{ARGV[0]}"
     end
   end
 

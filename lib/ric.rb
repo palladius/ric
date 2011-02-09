@@ -7,6 +7,8 @@ require 'ric/debug'
 require 'ric/html'
 require 'ric/zibaldone'
 
+require 'ruby_classes/arrays'
+
 module Ric
   #include Ric::Colors
   
@@ -20,3 +22,5 @@ include Ric::Colors
 include Ric::Conf
 include Ric::Debug
 include Ric::Files
+
+include RubyClasses::Array
