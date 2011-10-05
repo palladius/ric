@@ -21,7 +21,8 @@ Echoe.new('ric', version ) do |p|
     ".noheroku",
     "HISTORY"
   ]
-  p.development_dependencies = [ 'activeresource' ]
+  p.development_dependencies = [ 'activeresource','echoe' ]
+  p.runtime_dependencies = [ 'activeresource' ]
 end
 
 #### RAKE TEST
