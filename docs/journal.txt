@@ -11,8 +11,18 @@
 
 == deploy ==
 
+# Old docs:
 	rake build
   rake release
+
+# Copied from docs NOW: http://fauna.github.com/fauna/echoe/files/README.html
+	Deploying your gem
+	To deploy the gem and documentation:
+
+	  rake manifest
+	  rake release
+	  rake publish_docs
+
 
 # Its pushed on gemcutter, yay!
 

@@ -22,6 +22,8 @@ To use Ric in a Rails 3 application:
 
 2. Install it by running `bundle install`.
 
+Note. If you want to use the septober CLI you should also install active_reswurce. I dont know how to do it automatically yet, any help is much appreciated :P
+
 ## Contributors
 
 * [Riccardo Carlesso](http://github.com/palladius) ([website](http://www.palladius.it/))
