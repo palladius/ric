@@ -1,6 +1,6 @@
 # Ric 
 
-<img src="https://github.com/palladius/riclib/raw/master/images/photos/Riccardo/Riccardo%20OnBedWithPenguin.jpg" width="300" alt="Sleeping with my Penguin" align='right' />
+<img src="https://github.com/palladius/ric/raw/master/images/photos/Riccardo/Riccardo%20OnBedWithPenguin.jpg" width="300" alt="Sleeping with my Penguin" align='right' />
 
 Welcome to ''ric'' (formerly known as 'riclib').
 
