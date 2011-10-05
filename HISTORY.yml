@@ -1,4 +1,12 @@
 # would like to have this in YML format :)
+2011-10-05 v0.11.18:
+ - septober v1.0.0 (just updated label)
+2011-10-05 v0.11.17:
+ - echo gemspec: now added to Runtime Dependencies like in rails gem. Lets see if it works
+2011-10-05 v0.11.16:
+ - echoe gemspec: tried to add activeresource to dependencies but cut/pasted wrong and now its a DEVEL dependency: worthless
+2011-10-05 v0.11.15:
+ - septober v0.9.8 timeout from 7 to 15 secs
 2011-02-06 v0.11.14:
  - septober v0.9.8 with timeout and :edit
 2011-02-06 v0.11.13:
