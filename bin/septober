@@ -51,7 +51,7 @@
     :septober_url        => 'http://septober.heroku.com/' , 
     :dflt_config_file    => '~/.septober.yml' , 
     :local               => false ,
-    :timeout             => 7 ,
+    :timeout             => 15 ,
   }
   
   def init

@@ -1,3 +1,4 @@
 
 - include ~/lib/ric.rb automagically if exists ;)
 - TESTING!!!
+- include gems like active_resource into the Gemfile so it doesnt show a broken dependency if you gem install ric it also gem installs active resource :)
