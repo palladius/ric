@@ -6,10 +6,7 @@ Welcome to ''ric'' (formerly known as 'riclib').
 
 This is my first public repository with icons code and stuff.
 
-Modern life is RUBYish, so am I ;-)
-
-<font color='red'>Notice</font>. 
-On 24jan2011 I renamed the `riclib` repository to `ric`, to harmonize with GEM name. Updating VERSION soon as well.
+Modern life is <font color='red'>RUBY</font>ish, so am I ;-)
 
 * [ric](http://rubygems.org/gems/ric) as a gem.
 * [Ric](http://github.com/palladius/ric) on github.
@@ -21,8 +18,6 @@ To use Ric in a Rails 3 application:
 1. Require it in the Gemfile: `gem 'ric'`
 
 2. Install it by running `bundle install`.
-
-Note. If you want to use the septober CLI you should also install active_reswurce. I dont know how to do it automatically yet, any help is much appreciated :P
 
 ## Contributors
 
@@ -37,3 +32,4 @@ Note. If you want to use the septober CLI you should also install active_reswurc
 
 Ric is Copyright (c) 2011-11 [Riccardo Carlesso](http://www.palladius.it/), and is released under GPLv3 license.
 
+<font color='red'>Notice</font>. Use this gem and perfect it (as if it was difficult!) and please come back to me with suggestions!
