@@ -6,7 +6,7 @@ README.md
 Rakefile
 TODO
 VERSION
-bin/itunes
+bin/itunes.rb
 bin/ric
 bin/riclib-test
 bin/septober
