@@ -1,4 +1,6 @@
 # would like to have this in YML format :)
+2011-10-05 v0.11.19:
+ - moved itunes to itunes.rb (itunes ships now with sakura!)
 2011-10-05 v0.11.18:
  - septober v1.0.0 (just updated label)
 2011-10-05 v0.11.17:
