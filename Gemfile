@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in sakura.gemspec
 #gemspec
 gem 'echoe'
-gem 'active_support'
-gem 'active_resource'
+gem 'activesupport'
+gem 'activeresource'
 
 group :test do
   gem 'rake'
