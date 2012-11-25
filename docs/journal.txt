@@ -11,22 +11,33 @@
 
 == deploy ==
 
-# Old docs:
-	rake build
-  rake release
+  # Old docs:
+
+	# Deploy version 1
+	rake build && 
+	rake release &&
+	echo Correctly built and deployed version 1
+	
+Note that your credentials are in `~/.gem/credentials`. I personally
+simlinked them to my personal repo...
 
 # Copied from docs NOW: http://fauna.github.com/fauna/echoe/files/README.html
 	Deploying your gem
 	To deploy the gem and documentation:
 
-	  rake manifest
-	  rake release
-	  rake publish_docs
+	  # Deploy version 2
+	  rake manifest &&
+	  rake release &&
+	  rake publish_docs &&
+	  echo Correctly deployed and documented version 2
 
+		#TODO try also this (v3 not working yet)
+		rake deploy
 
 # Its pushed on gemcutter, yay!
 
 == DEBUGGING ==
+
 I have no clue on how to debug it!
 Some gems (like 0.9.7) load perfectly ewithout loading rubygems before.
 Others (0.10.1) dont load at all with stupid messages.
@@ -36,3 +47,7 @@ SIGH.
 Somethings I tried:
 
 - always ruby init.rb # on the root
+
+== TESTING ==
+
+Run `rake test` and see what happens.
