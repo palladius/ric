@@ -29,7 +29,7 @@ end
 #### RAKE TEST
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -50,4 +50,16 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('HISTORY.yml')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+desc 'Deploys new version of gem'
+#task :default => :test
+namespace :deploy do
+	# I think it'd be smarter to do some
+	# task :manifest
+	# task :build_gemspec
+	# But I dont know how to do that :)
+  #system 'rake manifest && rake build_gemspec && echo built ok'
+  puts "TODO deploy gem to rubygems..."
+  system 'touch TODO-rake-deploy.touch'
 end

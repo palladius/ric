@@ -1,4 +1,5 @@
 CHANGELOG
+Gemfile
 HISTORY.yml
 LICENSE
 Manifest
@@ -25,6 +26,7 @@ lib/ruby_classes/arrays.rb
 lib/ruby_classes/strings.rb
 lib/tmp/uniquify.rb
 rails/init.rb
+ric.gemspec
 sbin/reboot.rb
 sbin/ric_reboot.rb
 test/sample_conf.yml
