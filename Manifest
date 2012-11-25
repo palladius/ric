@@ -6,6 +6,7 @@ Manifest
 README.md
 Rakefile
 TODO
+TODO-rake-deploy.touch
 VERSION
 bin/itunes.rb
 bin/ric
