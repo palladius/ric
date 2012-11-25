@@ -1,5 +1,7 @@
 # Ric 
 
+[![Build Status](https://secure.travis-ci.org/palladius/ric.png)](http://travis-ci.org/palladius/ric)
+
 <img src="https://github.com/palladius/ric/raw/master/images/photos/Riccardo/Riccardo%20OnBedWithPenguin.jpg" width="300" alt="Sleeping with my Penguin" align='right' />
 
 Welcome to ''ric'' (formerly known as 'riclib').
