@@ -29,6 +29,7 @@ lib/ruby_classes/strings.rb
 lib/tmp/uniquify.rb
 rails/init.rb
 sbin/rake-deploy1.sh
+sbin/rake-deploy2.sh
 sbin/reboot.rb
 sbin/ric_reboot.rb
 test/sample_conf.yml
