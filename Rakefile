@@ -10,6 +10,7 @@ Echoe.new('ric', version ) do |p|
    with hence!)"
   p.url            = "http://github.com/palladius/ric"
   p.author         = "Riccardo Carlesso"
+  p.license        = "See https://github.com/palladius/ric/blob/master/LICENSE"
   p.email          = "['p','ll','diusbonton].join('a') @ gmail.com"
   p.ignore_pattern = [
     "tmp/*", 
