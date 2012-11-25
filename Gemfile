@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 #gemspec
 gem 'echoe'
 gem'active_support'
+gem'active_resource'
 
 group :test do
   gem 'rake'
