@@ -1,4 +1,6 @@
 # would like to have this in YML format :)
+2011-10-06 v0.12.1:
+ - Nothing really. Just testing the deploy
 2011-10-05 v0.12.0:
  - Requiring at Gemfile level some libraries (such as active_resource), so I can DRY the requirement in scripts... ;)
 2012-11-25 v0.11.20:
