@@ -1,6 +1,5 @@
 CHANGELOG
 Gemfile
-Gemfile.lock
 HISTORY.yml
 LICENSE
 Makefile
@@ -29,10 +28,6 @@ lib/ruby_classes/arrays.rb
 lib/ruby_classes/strings.rb
 lib/tmp/uniquify.rb
 rails/init.rb
-sbin/rake-deploy1.sh
-sbin/rake-deploy2.sh
-sbin/reboot.rb
-sbin/ric_reboot.rb
 test/sample_conf.yml
 test/strings_helper.rb
 test/test_helper.rb

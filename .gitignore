@@ -8,3 +8,4 @@ doc
 vendor/
 ric.gemspec
 Gemfile.lock
+.bundle/

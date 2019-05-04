@@ -10,11 +10,12 @@ Echoe.new('ric', version ) do |p|
    with hence!)"
   p.url            = "http://github.com/palladius/ric"
   p.author         = "Riccardo Carlesso"
-  #p.license        = "See https://github.com/palladius/ric/blob/master/LICENSE"
+  p.licenses       = "MIT" # see LICENSE
   p.email          = "['p','ll','diusbonton].join('a') @ gmail.com"
   p.ignore_pattern = [
     "tmp/*", 
     "docs/*", 
+    "sbin/*", 
     "script/*", 
     "tmp/*", "tmp/*/*", "tmp/*/*/*",
     "images/*/*/*", "images/*/*", 'images', 
@@ -45,7 +46,7 @@ end
 desc 'Generate documentation for the ric gem'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Ric GEM Hehehe'
+  rdoc.title    = 'Riccardo GEM'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('HISTORY.yml')
