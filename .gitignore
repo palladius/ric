@@ -5,3 +5,6 @@ doc
 *.swp
 .git.autopulled
 .git.autopushed
+vendor/
+ric.gemspec
+Gemfile.lock
