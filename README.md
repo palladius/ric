@@ -32,6 +32,6 @@ To use Ric in a Rails 3 application:
 
 ## Copyright & License
 
-Ric is Copyright (c) 2011-11 [Riccardo Carlesso](http://www.palladius.it/), and is released under GPLv3 license.
+Ric is Copyright (c) 2011-11 [Riccardo Carlesso](http://www.palladius.it/), and is released under MIT license.
 
 <font color='red'>Notice</font>. Use this gem and perfect it (as if it was difficult!) and please come back to me with suggestions!
