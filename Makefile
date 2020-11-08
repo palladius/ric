@@ -17,6 +17,7 @@ build: install
 
 deploy-to-rubygems: build
 	bundle exec rake deploy
+	yellow gem push ric-0-0-0.gem 
 
 # funge
 docs:
@@ -24,6 +25,7 @@ docs:
 
 clean:
 	rm -rf pkg/ doc/
+
 
 versions:
 	ruby -v

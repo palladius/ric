@@ -57,12 +57,31 @@ end
 desc 'Deploys new version of gem'
 #task :default => :test
 namespace :deploy do
+  # pasted in every deploy:<something>
+  puts "# DEPLOY # TODO deploy gem to rubygems..."
+  puts "# DEPLOY # Riccardo> Mke sure to wrap with 'bundle exec rake' to loag gems from vendor/"
 
 	# I think it'd be smarter to do some
 	# task :manifest
 	# task :build_gemspec
 	# But I dont know how to do that :)
   #system 'rake manifest && rake build_gemspec && echo built ok'
-  puts "TODO deploy gem to rubygems..."
-  system 'touch TODO-rake-deploy.touch'
+  #Rake::Task["my_namespace:create_admin"].invoke
+  #Rake::Task["my_namespace:create_user"].invoke
+  #Rake::Task["deploy"].invoke
+  #system 'touch TODO-rake-deploy.touch'
+
+  task :sobenme do
+    puts "= SOBENME ="
+    puts 'Try calling: bundle exec rake deploy:ric_deploy'
+  end
+  task :ric_deploy do
+    puts "= ric_deploy ="
+    puts "According to echoe gem docs (https://github.com/evan/echoe), you should call manifest/release/publish_docs"
+    #rake manifest
+    #rake release
+    #rake publish_docs
+    system 'rake manifest && rake build_gemspec && echo built ok'
+  end
+
 end
