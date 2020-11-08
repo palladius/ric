@@ -11,5 +11,6 @@ gem 'activeresource'
 group :test do
   gem 'rake'
   gem 'echoe'
+  gem 'test-unit'
 end
 

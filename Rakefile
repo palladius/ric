@@ -2,7 +2,8 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-version = File.read( 'VERSION' ) rescue "0.0.42_bugged"
+version = File.read('VERSION') rescue "0.0.42_bugged"
+#puts  "Version: '#{version}'"
 
 Echoe.new('ric', version ) do |p|
   p.description    = "My first gem with various utilities (colors and tests now). 
@@ -11,7 +12,7 @@ Echoe.new('ric', version ) do |p|
   p.url            = "http://github.com/palladius/ric"
   p.author         = "Riccardo Carlesso"
   p.licenses       = "MIT" # see LICENSE
-  p.email          = "['p','ll','diusbonton].join('a') @ gmail.com"
+  p.email          = "['p','ll','diusbonton+ricgem'].join('a') @ gm il com"
   p.ignore_pattern = [
     "tmp/*", 
     "docs/*", 
@@ -48,7 +49,7 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'Riccardo GEM'
   rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('README.md')
   rdoc.rdoc_files.include('HISTORY.yml')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
@@ -56,6 +57,7 @@ end
 desc 'Deploys new version of gem'
 #task :default => :test
 namespace :deploy do
+
 	# I think it'd be smarter to do some
 	# task :manifest
 	# task :build_gemspec

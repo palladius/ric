@@ -1,5 +1,10 @@
 
 # Makefile before I learn how to use a Rakefile appropriately :P
+
+
+rake-help:
+	bundle exec rake --tasks
+
 install: 
 	bundle install --path vendor/bundle
 
@@ -11,7 +16,11 @@ build: install
 	echo Correctly built and deployed version 1
 
 deploy-to-rubygems: build
-	rake deploy
+	bundle exec rake deploy
+
+# funge
+docs:
+	bundle exec rake rdoc
 
 clean:
 	rm -rf pkg/ doc/
