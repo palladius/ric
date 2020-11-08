@@ -10,9 +10,9 @@ TODO-rake-deploy.touch
 VERSION
 bin/itunes.rb
 bin/ric
+bin/ric-xcopy
 bin/riclib-test
 bin/septober
-bin/xcopy
 init.rb
 lib/rails/acts_as_carlesso.rb
 lib/rails/helpers/rails_helper.rb

@@ -3,11 +3,15 @@
 install: 
 	bundle install --path vendor/bundle
 
-deploy: install
+# questo dovrebbe essere un build
+build: install
 	#sbin/rake-deploy1.sh
 	bundle exec rake build
 	bundle exec rake release
 	echo Correctly built and deployed version 1
+
+deploy-to-rubygems: build
+	rake deploy
 
 clean:
 	rm -rf pkg/ doc/
