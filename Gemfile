@@ -7,6 +7,7 @@ source 'https://rubygems.org'
 gem 'echoe'
 gem 'activesupport'
 gem 'activeresource'
+gem 'lolcat'
 
 group :test do
   gem 'rake'

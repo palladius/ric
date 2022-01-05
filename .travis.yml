@@ -3,6 +3,7 @@ rvm:
  - 1.8.7
  - 1.9.3
  - 2.5.1 # the one i have at home
+ - 2.7.2 # the latest i've used in past years
 branches:
   only:
     - master
