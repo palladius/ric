@@ -1,5 +1,6 @@
 
 # Makefile before I learn how to use a Rakefile appropriately :P
+VERSION = $(shell cat VERSION)
 
 
 rake-help:
@@ -13,19 +14,22 @@ build: install
 	#sbin/rake-deploy1.sh
 	bundle exec rake build
 	bundle exec rake release
-	echo Correctly built and deployed version 1
+	echo Correctly built and deployed version $(VERSION)
 
 deploy-to-rubygems: build
 	bundle exec rake deploy
-	yellow gem push ric-0-0-0.gem 
+	yellow gem push ric-0-0-0.gem or maybe $(VERSION)
 
 # funge
 docs:
 	bundle exec rake rdoc
 
 clean:
-	rm -rf pkg/ doc/
+	rm -rf pkg/ doc/ Gemfile.lock vendor/
 
+test:
+	echo credo non sia ancora implementato ma proviamo...
+	rake test
 
 versions:
 	ruby -v

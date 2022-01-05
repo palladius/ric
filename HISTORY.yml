@@ -1,4 +1,6 @@
 # would like to have this in YML format :)
+2022-01-05 v0.13.1:
+- just realized some idiot (me) pushed 0.13.0 so i need to beat it. https://rubygems.org/gems/ric/
 2022-01-05 v0.12.5:
 - Added lolcat as dependency. Life wouldnt be the same without.
 2020-11-08 v0.12.4:
@@ -63,3 +65,8 @@
  - colors are broken, I implemnent a small test script in bin/
 2011-01-16 v0.9.2: 
  - Added uniquify from rbates just to copy it.
+# See Echoe CHANGELOG format (this is an example, should RAKE/BAKE it from the HISTORY.YML)
+#2011-02-06 v0.11.14:
+#v0.11.15. Changed timeout and something else
+#v0.11.14. v0.9.8 with timeout and :edit
+#v0.11.13: septober v0.9.7 with better CLI - reengineering septober yaml and help...
