@@ -4,10 +4,18 @@ VERSION = $(shell cat VERSION)
 
 
 rake-help:
+	echo HELP
 	bundle exec rake --tasks
 
-install: 
+clean-install: clean
+	echo Cleaning up downloadded libraries and doing a fresh install.
+	make install
+
+install:
+	echo Installing dependencies for ric:$(VERSION) on vendor/bundle 
+	bundle exec ruby -v
 	bundle install --path vendor/bundle
+	ls -al vendor/bundle/ruby/
 
 # questo dovrebbe essere un build
 build: install
