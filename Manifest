@@ -25,6 +25,9 @@ lib/ruby_classes/arrays.rb
 lib/ruby_classes/strings.rb
 lib/tmp/uniquify.rb
 rails/init.rb
+t.trace.both
+t.trace.err
+t.trace.out
 test/sample_conf.yml
 test/strings_helper.rb
 test/test_helper.rb
@@ -55,12 +58,16 @@ vendor/bundle/ruby/2.7.0/cache/psych-4.0.3.gem
 vendor/bundle/ruby/2.7.0/cache/rake-13.0.6.gem
 vendor/bundle/ruby/2.7.0/cache/rdoc-6.4.0.gem
 vendor/bundle/ruby/2.7.0/cache/rubyforge-2.0.4.gem
+vendor/bundle/ruby/2.7.0/cache/stringio-3.0.0.gem
 vendor/bundle/ruby/2.7.0/cache/test-unit-3.5.3.gem
 vendor/bundle/ruby/2.7.0/cache/tzinfo-2.0.4.gem
 vendor/bundle/ruby/2.7.0/cache/zeitwerk-2.5.3.gem
 vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-20/2.7.0/psych-4.0.3/gem.build_complete
 vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-20/2.7.0/psych-4.0.3/gem_make.out
 vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-20/2.7.0/psych-4.0.3/psych.bundle
+vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-20/2.7.0/stringio-3.0.0/gem.build_complete
+vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-20/2.7.0/stringio-3.0.0/gem_make.out
+vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-20/2.7.0/stringio-3.0.0/stringio.bundle
 vendor/bundle/ruby/2.7.0/gems/activemodel-6.1.4.4/CHANGELOG.md
 vendor/bundle/ruby/2.7.0/gems/activemodel-6.1.4.4/MIT-LICENSE
 vendor/bundle/ruby/2.7.0/gems/activemodel-6.1.4.4/README.rdoc
@@ -1147,6 +1154,12 @@ vendor/bundle/ruby/2.7.0/gems/rubyforge-2.0.4/lib/rubyforge.rb
 vendor/bundle/ruby/2.7.0/gems/rubyforge-2.0.4/lib/rubyforge/client.rb
 vendor/bundle/ruby/2.7.0/gems/rubyforge-2.0.4/test/test_rubyforge.rb
 vendor/bundle/ruby/2.7.0/gems/rubyforge-2.0.4/test/test_rubyforge_client.rb
+vendor/bundle/ruby/2.7.0/gems/stringio-3.0.0/README.md
+vendor/bundle/ruby/2.7.0/gems/stringio-3.0.0/ext/stringio/Makefile
+vendor/bundle/ruby/2.7.0/gems/stringio-3.0.0/ext/stringio/extconf.rb
+vendor/bundle/ruby/2.7.0/gems/stringio-3.0.0/ext/stringio/stringio.bundle
+vendor/bundle/ruby/2.7.0/gems/stringio-3.0.0/ext/stringio/stringio.c
+vendor/bundle/ruby/2.7.0/gems/stringio-3.0.0/lib/stringio.bundle
 vendor/bundle/ruby/2.7.0/gems/test-unit-3.5.3/BSDL
 vendor/bundle/ruby/2.7.0/gems/test-unit-3.5.3/COPYING
 vendor/bundle/ruby/2.7.0/gems/test-unit-3.5.3/PSFL
@@ -1298,6 +1311,7 @@ vendor/bundle/ruby/2.7.0/specifications/psych-4.0.3.gemspec
 vendor/bundle/ruby/2.7.0/specifications/rake-13.0.6.gemspec
 vendor/bundle/ruby/2.7.0/specifications/rdoc-6.4.0.gemspec
 vendor/bundle/ruby/2.7.0/specifications/rubyforge-2.0.4.gemspec
+vendor/bundle/ruby/2.7.0/specifications/stringio-3.0.0.gemspec
 vendor/bundle/ruby/2.7.0/specifications/test-unit-3.5.3.gemspec
 vendor/bundle/ruby/2.7.0/specifications/tzinfo-2.0.4.gemspec
 vendor/bundle/ruby/2.7.0/specifications/zeitwerk-2.5.3.gemspec
