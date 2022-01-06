@@ -20,10 +20,11 @@
   ###########################################################
 =end
 
-  $PROG_VER = '1.0.0'
-
+$PROG_VER = '1.0.1'
 =begin
   @history:
+    1.0.1 2022-01-06 Fixing bug 
+    1.0.0 ????
     0.9.8 2011-02-10 Added timeout (works) and a broken prototype for :edit
     0.9.7 2011-02-09 mini banner WITH version (not to get nuts again thru versions!). --conf now works!
     0.9.6 2011-02-09 CLI supports --conf now. Tags working!
@@ -39,7 +40,10 @@
   require 'rubygems'
   require 'ric'
   #require 'active_resource'    # not needed anymore, after ric gem v0.12.0
+  require 'active_resource'    # restored since i can then debug without installing the gem
   require 'socket'
+  gem 'psych', '=4.0.3'
+  require 'psych' 
   
   include RubyClasses::Array 
   
@@ -52,6 +56,7 @@
     :dflt_config_file    => '~/.septober.yml' , 
     :local               => false ,
     :timeout             => 15 ,
+    :subconf             => nil , # if nil it goes to septober/septober_local
   }
   
   def init
@@ -59,12 +64,15 @@
     $optparse = OptionParser.new do |opts|
       opts.on( '-c', '--config <FILE>', 'uses a different configfile from: '+$opts[:dflt_config_file] ) {|arg_file|  
         puts "Importing file different from default: #{yellow arg_file}"
-        $opts[:config_file] = arg_file  
+        $opts[:config_file] = arg_file
       }
       opts.on( '-d', '--debug',     'enables debug (DFLT=false)' )  {  $opts[:debug] = true ; $debug = true ; debug_on('Debug enabled from ARGV')}
       opts.on( '-h', '--help',      'Display this screen' )          {  puts(opts); exit 1 }
       opts.on( '-n', '--no-colors', 'Deactives colors (onta e disonore!)' ) { $colors_active = false }
-      opts.on( '-l', '--local',     'uses local instead' )    {  $opts[:local] = true }
+      opts.on( '-l', '--local',     'uses "septober_local" instead of septober in YAML' )    {  $opts[:local] = true }
+      opts.on( '-s', '--subconf SUBCONF',   'uses different subconf in YAML file (dflt: "septober"/"local")') {|subconf|
+        $opts[:subconf] = subconf 
+      }
       opts.on( '-t', '--timeout TIMEOUT',   "Sets timeout (default =#{$opts[:timeout]}s)" ) {|new_timeout| 
         $opts[:timeout] = new_timeout.to_i rescue 5
         RemoteTodo.timeout = new_timeout.to_i rescue 5
@@ -110,32 +118,27 @@ Usage: #{File.basename $0} [options] [add|list|done|del] [args]
     self.timeout      = $opts[:timeout] rescue 6
     
     @@sample_yml_config = <<-SAMPLE_YML_CONFIG 
-riccardo heroku:  &DEVEL_LOCAL
+local: &DEVEL_LOCAL
   # YAML file with septober configuration. For more info: http://septober.heroku.com/
   site: "http://localhost:3000/api/"   # or http://septober.heroku.com/api/
   user: guest
   password: guest
   description: My Rails 3 development (guest//guest shuld work for real This is NOT a random thing)
-RiccardoHeroku: &RICCARDO_HEROKU
-  site: "http://septober.heroku.com/api/"   # or http://septober.heroku.com/api/
-  user: YOURUSERNAME
-  password: YOURPASSWORD
-  description: this server exists but is REALLY slow..
-Your server:
+remote:
   site: http://your_server.example.com/api/
   user: USERNAME
   pass: V3ry_D1ff1cul1
   description: you can use your own server. this is open source. Just remember to say Riccardo you think hes a genius. I dont want money, just fame.
 #########################################################################################################
 
-  #########################################################################################################
-  # YAML file with septober configuration. For more info: http://septober.heroku.com/
-  # You just change here:
-septober:
-  <<: *RICCARDO_HEROKU
-septober_local:
-  <<: *DEVEL_LOCAL       
-      
+#########################################################################################################
+# YAML file with septober configuration. For more info: http://septober.heroku.com/
+# You just change here:
+#remote:
+#  <<: *RICCARDO_HEROKU
+#local:
+#  <<: *DEVEL_LOCAL       
+# IMPORTANT! It looks like psych gem doesnt expand these magic &HEROKU/*HEROKU so better remove them and simplify with dereferencing :/
 SAMPLE_YML_CONFIG
       
     # self.ssl_options = {:cert         => OpenSSL::X509::Certificate.new(File.open(pem_file))
@@ -149,9 +152,9 @@ SAMPLE_YML_CONFIG
       deb "Importing config from #{file}.."
       if File.exists?(real_file)
         #puts "TODO import from #{file} (local=#{$opts[:local]})"
-        sub_conf = $opts[:local] ? 'septober_local' : 'septober' # TODO remove local... put a generic subconf key, like 'wor', devel', ...
-        whole_hash = YAML.load_file(real_file) rescue {}
-        puts "Possible sub_confs: #{yellow whole_hash.keys.join(', ')}"
+        sub_conf = $opts[:local] ? 'local' : 'remote' 
+        whole_hash = YAML.load_file(real_file) # rescue { :error => $! }
+        puts "Possible sub_confs (you can enforce them with -s new as of 2022!): #{yellow whole_hash.keys.join(', ')}"
         conf_hash = whole_hash[sub_conf] rescue nil
         self.site = conf_hash['site']
         self.user = conf_hash['user']
@@ -335,6 +338,7 @@ SAMPLE_YML_CONFIG
   
 
   def main()
+    #YAML::ENGINE.yamler = 'syck'
     init()
       # Maybe you may want to check on ARGV
     #unless ARGV.size > 0
