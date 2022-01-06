@@ -48,3 +48,6 @@ versions:
 build2022:
 	gem build ric.gemspec
 	echo gem install ./ric-0.0.0.gem
+
+release2022:
+	gem release

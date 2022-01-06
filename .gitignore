@@ -11,3 +11,4 @@ Gemfile.lock
 .bundle/
 rdoc/
 t.*
+foodie/
