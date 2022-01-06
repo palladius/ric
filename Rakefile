@@ -2,8 +2,8 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-version = File.read('VERSION') rescue "0.0.42_bugged"
-#puts  "Version: '#{version}'"
+version = File.read('VERSION').chomp # rescue "0.0.42_bugged"
+puts  "Beware ECHOE embedded in Rakefile. Version: '#{version}'"
 
 Echoe.new('ric', version ) do |p|
   p.description    = "My first gem with various utilities (colors and tests now). 

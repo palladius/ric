@@ -10,3 +10,4 @@ ric.gemspec
 Gemfile.lock
 .bundle/
 rdoc/
+t.*

@@ -21,6 +21,7 @@ install:
 build: install
 	#sbin/rake-deploy1.sh
 	bundle exec rake build
+	echo OK Build now lets create release..
 	bundle exec rake release
 	echo Correctly built and deployed version $(VERSION)
 
@@ -43,3 +44,7 @@ versions:
 	ruby -v
 	gem -v
 	bundle -v
+
+build2022:
+	gem build ric.gemspec
+	echo gem install ./ric-0.0.0.gem
