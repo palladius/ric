@@ -2,6 +2,7 @@
 2022-01-19 v0.14.1:
 - added `rainbows_and_unicorns` method to String. Syntactis sugar at its limit!
 - better Septober. Now supports :local/:remote which seems more meaningful.
+- removed Makefile from .gemspec (which is like a manual and SILLY .gemignore)
 2022-01-05 v0.14.0:
 - fixed Septober script to v1.0.1. Yuppie!
 2022-01-05 v0.13.1:
