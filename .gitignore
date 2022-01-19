@@ -13,3 +13,5 @@ rdoc/
 t.*
 foodie/
 ric*.gem
+.yardoc/
+doc

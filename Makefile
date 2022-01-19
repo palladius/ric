@@ -52,3 +52,8 @@ build2022:
 release2022: build2022
 	@yellow Lets see if this works... seems to find a strangely DIFFERENT name..
 	echodo gem release
+
+doc2022:
+	#I dont put this in Gemfile since it doesnt need be shipped with the gem..
+	gem install yard
+	yard doc
