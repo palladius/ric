@@ -47,7 +47,8 @@ versions:
 
 build2022:
 	gem build ric.gemspec
-	echodo gem install ./ric$(VERSION).gem
+	@white Riccardo now try for testing: gem install ./ric$(VERSION).gem
 
 release2022: build2022
-	gem release
+	@yellow Lets see if this works... seems to find a strangely DIFFERENT name..
+	echodo gem release
