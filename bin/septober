@@ -20,7 +20,7 @@
   ###########################################################
 =end
 
-$PROG_VER = '1.0.1'
+$PROG_VER = '1.0.2'
 =begin
   @history:
     1.0.1 2022-01-06 Fixing bug 
@@ -116,6 +116,7 @@ Usage: #{File.basename $0} [options] [add|list|done|del] [args]
     self.site         = "http://septober.example.com/" # uninitialized
     self.element_name = 'todo'
     self.timeout      = $opts[:timeout] rescue 6
+    #self.priority     = 3 # default
     
     @@sample_yml_config = <<-SAMPLE_YML_CONFIG 
 local: &DEVEL_LOCAL
@@ -152,9 +153,16 @@ SAMPLE_YML_CONFIG
       deb "Importing config from #{file}.."
       if File.exists?(real_file)
         #puts "TODO import from #{file} (local=#{$opts[:local]})"
-        sub_conf = $opts[:local] ? 'local' : 'remote' 
         whole_hash = YAML.load_file(real_file) # rescue { :error => $! }
-        puts "Possible sub_confs (you can enforce them with -s new as of 2022!): #{yellow whole_hash.keys.join(', ')}"
+        
+        sub_conf = $opts[:subconf].nil? ? 
+          ($opts[:local] ? 'local' : 'remote' ) : 
+          $opts[:subconf]
+        if not whole_hash.keys.include?(sub_conf) 
+          puts "SubConf non existing: #{red(sub_conf.to_s)}. Available sub_confs: #{yellow whole_hash.keys.join(', ')}. Note that 'remote' is the default, 'local' comes from '-l 'and you can set anything with '-s whatevs' :)"
+          raise "SubConf not existing: #{(sub_conf)}"
+        end
+        puts "SubConf: #{yellow(sub_conf.to_s)}. Available sub_confs (you can enforce them with -s new as of 2022!): #{yellow whole_hash.keys.join(', ')}"
         conf_hash = whole_hash[sub_conf] rescue nil
         self.site = conf_hash['site']
         self.user = conf_hash['user']
@@ -169,7 +177,7 @@ SAMPLE_YML_CONFIG
     end
     
     def to_s
-      self.name
+      "RemoteTodo('#{self.name}', P#{priority ? priority : '?'})"
     end
     
     def self.description
@@ -179,6 +187,8 @@ SAMPLE_YML_CONFIG
     def self.description=(desc)
       @@description = desc
     end
+
+    attr_accessor :priority
     
     def colored_project_name()
       colora(project.color || :grey ,project.name)
@@ -266,7 +276,7 @@ SAMPLE_YML_CONFIG
   to assing the correct ptoject and stuff..
 =end
   def todo_add(words_from_argv)
-    puts bannerino( "Add('#{words_from_argv}')" )
+    puts bannerino( "Todo.Add('#{words_from_argv}')" )
     # TODO put this into begin/end/catch !!!
     t = RemoteTodo.create( 
       :name => words_from_argv, 
@@ -277,11 +287,17 @@ SAMPLE_YML_CONFIG
       #:project_id => 5,
       #:priority => 4 
     )
-    deb "DEB todo: #{t}"
-    ret = t.save    
-    puts "Some errors: '#{red t.errors.full_messages.to_s}'" if t.errors and t.errors.to_s != ''
+    #deb "DEB todo: #{t}"
+    
+    puts "Trying to save TODO at all costs: #{t}"
+    ret = t.save
+
+    #pred t.errors.full_messages if t.errors
+    puts "Some errors: '#{red t.errors.full_messages.to_s}'" if t.errors # and t.errors.full_messages.to_s != ''
+    
     if ret
       puts "Todo created successfully: ##{green t.id.to_s}" # just provides the Id 
+      puts "ret: #{ret}" 
     else
       pred "Some error saving todo: #{t.inspect}"
     end

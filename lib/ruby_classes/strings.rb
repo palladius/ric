@@ -254,6 +254,11 @@ end
 
 alias :lorem :lorem_ipsum
 
+# 2022 addon
+def rainbows_and_unicorns()
+  "🦄 #{self}🌈"
+end
+
   # supports: strings, arrays and regexes :)
   # @returns a Regexp
 def autoregex(anything)
