@@ -5,7 +5,7 @@ ricc-app:
   maturity: idea
   app_name: ric-gem
   lang: Ruby
-  version: 0.14.5
+  version: 0.14.6
   emoji: "\U0001F48E"
   owner: github.com/palladius
   app_description:
@@ -21,6 +21,7 @@ ricc-app:
     - Ruby
     - Rails
     - rubygem
+    - septober
   description_long:
     This is Riccardo Carlesso's first public repository. The gem can
     be installed and used in Rails 3 applications by adding `gem 'ric'` to the Gemfile

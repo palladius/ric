@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.14.6] - 2026-01-19
+
+- ♻️ Refactored `HISTORY.yml` into `CHANGELOG.md` using gitmojis.
+
 ## [0.14.5] - 2026-01-19
 
 - 🐛 Fixed gem creation for Ruby 3.x (fixed `stringio`, `webrick`, `Manifest` and `Echoe` monkey-patch).
