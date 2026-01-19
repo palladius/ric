@@ -11,11 +11,13 @@ gem 'echoe'
 #gem 'activeresource'
 gem 'lolcat'
 #gem 'stringio' # 3.0.1 # latest version yeilds error!
-gem 'stringio',  '= 3.0.0'
+# gem 'stringio',  '= 3.0.0'
 
 group :test do
   gem 'rake'
   gem 'echoe'
   gem 'test-unit'
+  gem 'webrick'
+  gem 'activesupport'
 end
 

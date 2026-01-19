@@ -1,4 +1,7 @@
 # would like to have this in YML format :)
+2026-01-19 v0.14.5:
+- Fixed gem creation for Ruby 3.x (fixed stringio, webrick, Manifest and Echoe monkey-patch).
+- Disabled gem signing due to expired certificate.
 2022-01-19 v0.14.1:
 - added `rainbows_and_unicorns` method to String. Syntactis sugar at its limit!
 - better Septober. Now supports :local/:remote which seems more meaningful.
