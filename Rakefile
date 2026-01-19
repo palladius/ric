@@ -43,8 +43,7 @@ Echoe.new('ric', version ) do |p|
     "tmp/*", "tmp/*/*", "tmp/*/*/*",
     "images/*/*/*", "images/*/*", 'images', 
     "private/*",
-    ".noheroku",
-    "HISTORY"
+    ".noheroku"
   ]
   p.development_dependencies = [
 #    'activeresource',
