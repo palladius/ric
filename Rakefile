@@ -44,7 +44,7 @@ Echoe.new('ric', version ) do |p|
     "images/*/*/*", "images/*/*", 'images', 
     "private/*",
     ".noheroku",
-    "vendor/*"
+    "vendor", "vendor/**/*"
   ]
   p.development_dependencies = [
 #    'activeresource',
