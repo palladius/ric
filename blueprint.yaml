@@ -5,7 +5,7 @@ ricc-app:
   maturity: idea
   app_name: ric-gem
   lang: Ruby
-  version: 0.14.6
+  version: 0.15.0
   emoji: "\U0001F48E"
   owner: github.com/palladius
   app_description:

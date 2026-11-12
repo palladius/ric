@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.15.0] - 2026-11-11
+
+- 🚀 **Septober CLI v2.6.0 (Ruby 3.4.5+)**: Complete pure-Ruby rewrite of `bin/septober`, `bin/septober-cli`, and `bin/septober-cli-26` with zero external gem dependencies (`net/http`, `json`, `yaml` with `aliases: true`), sub-agent attribution (`--agent ermete|lobby|pux|freevola`), and support for both numeric IDs and full Septober URLs.
+- 🧹 Un-wintered `ric` gem for Ruby 3.4.5 (`File.exist?`, `ric.gemspec`, `Ric.version`, `Ric.say_hello`).
+
 ## [0.14.6] - 2026-01-19
 
 - ♻️ Refactored `HISTORY.yml` into `CHANGELOG.md` using gitmojis.

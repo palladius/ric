@@ -13,11 +13,11 @@ module Ric
      verbose = opts.fetch :verbose, true
      dryrun  = opts.fetch :dryrun,  true  # i scared of copying files!
 
-     unless File.exists?("#{to}/.git")
+     unless File.exist?("#{to}/.git")
        fatal 11,"Sorry cant travase data to an unversioned dir. Please version it with git (or add a .git dir/file to trick me)"
        exit 1
      end
-     unless File.exists?("#{to}/.safe_xcopy")
+     unless File.exist?("#{to}/.safe_xcopy")
        fatal 12, "Sorry I refuse to xcopy data unless you explicitly ask me to. You have to do this before:\n  #{yellow "touch #{to}/.safe_xcopy"} . 
        You are for sure a very smart person but there are a LOT of people out there who could destroy theyr file system! Thanks"
      end
@@ -36,7 +36,7 @@ module Ric
        destdir = File.dirname(to_file)
        deb "Copying: #{yellow from_file}.."
        #  could need creating the dir..
-       if File.exists?(destdir)
+       if File.exist?(destdir)
          # just copy the file
          command = "cp \"#{from_file}\" \"#{to_file}\""
        else

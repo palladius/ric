@@ -31,7 +31,7 @@ so you can call load_auto_conf('foo') and it will look throughout any ./.foo.yml
              # if YML exists return the load..
          file = "#{dir}/#{fp}"
          deb " - FILE: #{file}"
-         if File.exists?(file)
+         if File.exist?(file)
            puts "Found! #{green file}"
            yaml =  YAML.load( File.read(file) )
            puts "load_auto_conf('#{confname}', v#{libver}) found: #{green yaml}"  if verbose
